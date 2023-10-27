@@ -3,7 +3,7 @@ const app = express ()
 const port = 8000
 
 
-const tasabcv = 35.98
+const tasabcv = 35.10
 const tasamonitor = 37.24
 
 let date = new Date();
