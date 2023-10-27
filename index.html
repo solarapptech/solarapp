@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Solar</title>
+    </head>
+    <body>
+
+        <div id = "messages"></div>
+        <header> 
+            <div id = "encabezado">
+                <div id = "refrescar"> <img src ="img/actualizar.png"></div>
+                <div id = "actualizado">Actualizado:&nbsp;</div>
+                <div id = "fecha">Cargando...</div>
+                <div id = "temas"> <img src = "img/temas_1.png"></div>
+                <div id = "menuder"><img src = "img/menu_1.png"></div>
+            </div>
+            <div id = "banner"> <img src = "img/solar_banner.png"></div>
+            <div id ="err"></div>
+            <div id ="errt"></div>
+        </header>
+        <div id ="informacion">VALOR DEL DÓLAR<br>BCV y Monitor Dolar</br></div> 
+        
+        <section id = "items">
+            <div class ="imagenes">
+                <div class ="imagen">
+                    <img src ="img/bcv.png">
+                    </div> 
+                    <div id ="bcvr">Cargando
+                    </div>
+            </div>
+            <div class ="imagenes">
+                <div class ="imagen">
+                    <img src ="img/monitor.png">
+                    </div>
+                    <div id ="monitorr">Cargando</div>
+            </div>
+
+        </section>
+
+
+
+        <!-- <script src="cordova.js"></script> -->
+        <script src="js/jquery.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
