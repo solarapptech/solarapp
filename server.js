@@ -3,8 +3,8 @@ const app = express ()
 const port = 8000
 
 
-const tasabcv = 35.60
-const tasamonitor = 37.24
+const tasabcv = 35.12
+const tasamonitor = 37.12
 
 let date = new Date();
 let options = {timeZone: 'America/Caracas'};
