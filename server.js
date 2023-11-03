@@ -8,7 +8,7 @@ const tasamonitor = 37.12
 
 // let date = new Date();
 // let options = {timeZone: 'America/Caracas'};
-let caracas = 7:11 + 'pm.'
+let caracas = 1
 
 
 app.get ('/info1', (req, res) =>{
@@ -36,7 +36,7 @@ app.get ('/info2', (req, res) =>{
       res.setHeader('Content-Type', 'text/event-stream')
       res.setHeader('Access-Control-Allow-Origin', '*')
 
-      const sendData3 = `data: ${JSON.stringify(caracas)}\n\n`;
+      const sendData3 = `data: ${JSON.stringify('7:11 + pm.')}\n\n`;
       res.write(sendData3);
       
 
