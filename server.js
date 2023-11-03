@@ -8,7 +8,7 @@ const tasamonitor = 37.12
 
 // let date = new Date();
 // let options = {timeZone: 'America/Caracas'};
-let caracas = 7:11 pm.
+let caracas = 7:11 + 'pm.'
 
 
 app.get ('/info1', (req, res) =>{
