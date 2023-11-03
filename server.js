@@ -4,7 +4,7 @@ const port = 8000
 
 
 const tasabcv = 35.32
-const tasamonitor = 37.12
+const tasamonitor = 37.10
 
 // let date = new Date();
 // let options = {timeZone: 'America/Caracas'};
