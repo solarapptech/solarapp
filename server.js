@@ -43,7 +43,7 @@ app.get ('/info2', (req, res) =>{
         res.setHeader('Access-Control-Allow-Origin', '*')
   
         const intervalId = setInterval(() =>{
-        const sendData4 = `data: ${JSON.stringify(tasaeuro)}\n\n`;
+        const sendData4 = `data: ${tasaeuro}\n\n`;
         res.write(sendData4);
       },700)
 
