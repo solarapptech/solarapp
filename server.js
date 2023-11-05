@@ -5,10 +5,7 @@ const port = 8000
 
 const tasabcv = 35.32
 const tasamonitor = 37.10
-
-// let date = new Date();
-// let options = {timeZone: 'America/Caracas'};
-let caracas = 1
+const tasaeuro = 37.77
 
 
 app.get ('/info1', (req, res) =>{
@@ -18,7 +15,7 @@ app.get ('/info1', (req, res) =>{
    const intervalId = setInterval(() =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
     res.write(sendData);
-   },800)
+   },700)
 
 
 
@@ -29,7 +26,8 @@ app.get ('/info2', (req, res) =>{
       const intervalId = setInterval(() =>{
       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
       res.write(sendData2);
-    },800)
+    },700)
+
 
 
     app.get ('/info3', (req, res) =>{
@@ -40,14 +38,24 @@ app.get ('/info2', (req, res) =>{
       res.write(sendData3);
       
 
+      app.get ('/info4', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+  
+        const intervalId = setInterval(() =>{
+        const sendData4 = `data: ${JSON.stringify(tasaeuro)}\n\n`;
+        res.write(sendData4);
+      },700)
+
 
       res.on('close', () =>{
         console.log('Client Closed Connection')
         clearInterval(intervalId)
       res.end()
-    })
+     })
+   })
   })
-  })
+ })
 })
 
 
