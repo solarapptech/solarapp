@@ -7,6 +7,8 @@ const tasabcv = 35.32
 const tasamonitor = 37.10
 const tasaeuro = 37.77
 
+const percent = tasaeuro / tasabcv
+
 
 app.get ('/info1', (req, res) =>{
    res.setHeader('Content-Type', 'text/event-stream')
@@ -14,7 +16,9 @@ app.get ('/info1', (req, res) =>{
 
    const intervalId = setInterval(() =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
+    const sendDataV = `data: ${JSON.stringify(tasabcv * percent) +' Bs.'}\n\n`;
     res.write(sendData);
+    res.write(sendDataV);
    },700)
 
 
