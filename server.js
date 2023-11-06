@@ -16,9 +16,7 @@ app.get ('/info1', (req, res) =>{
 
    const intervalId = setInterval(() =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
-    const sendDataV = `data: ${JSON.stringify(tasabcv * percent) +' Bs.'}\n\n`;
     res.write(sendData);
-    res.write(sendDataV);
    },700)
 
 
@@ -52,6 +50,26 @@ app.get ('/info2', (req, res) =>{
       },700)
 
 
+      app.get ('/info5', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+     
+        const intervalId = setInterval(() =>{
+         const sendData5 = `data: ${JSON.stringify(tasabcv * percent) +' Bs.'}\n\n`;
+         res.write(sendData5);
+        },700)
+    
+     
+    app.get ('/info6', (req, res) =>{
+       res.setHeader('Content-Type', 'text/event-stream')
+       res.setHeader('Access-Control-Allow-Origin', '*')
+    
+       const intervalId = setInterval(() =>{
+        const sendData6 = `data: ${JSON.stringify(tasamonitor * percent) +' Bs.'}\n\n`;
+        res.write(sendData6);
+       },700)
+
+
       res.on('close', () =>{
         console.log('Client Closed Connection')
         clearInterval(intervalId)
@@ -60,6 +78,8 @@ app.get ('/info2', (req, res) =>{
    })
   })
  })
+})
+})
 })
 
 
