@@ -3,7 +3,7 @@ const app = express ()
 const port = 8000
 
 
-const tasabcv = 35.93
+const tasabcv = 35.91
 const tasamonitor = 38.13
 const tasaeuro = 39.38
 
