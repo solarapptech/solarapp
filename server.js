@@ -5,7 +5,7 @@ const port = 8000
 
 const tasabcv = 36.03
 const tasamonitor = 38.00
-const tasaeuro = 39.59
+const tasaeuro = 39.58
 
 const percent = tasaeuro / tasabcv
 
