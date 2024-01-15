@@ -36,7 +36,7 @@ app.get ('/info2', (req, res) =>{
       res.setHeader('Content-Type', 'text/event-stream')
       res.setHeader('Access-Control-Allow-Origin', '*')
 
-      const sendData3 = `data: ${JSON.stringify('Dom 14   -   2:45 PM')}\n\n`;
+      const sendData3 = `data: ${JSON.stringify('Lun 15   -   11:00 AM')}\n\n`;
       res.write(sendData3);
       
 
