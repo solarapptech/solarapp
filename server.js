@@ -3,9 +3,9 @@ const app = express ()
 const port = 8000
 
 
-const tasabcv = 36.07
-const tasamonitor = 38.47
-const tasaeuro = 39.17
+const tasabcv = 36.13
+const tasamonitor = 38.60
+const tasaeuro = 39.25
 
 const percent = tasaeuro / tasabcv
 
@@ -36,7 +36,7 @@ app.get ('/info2', (req, res) =>{
       res.setHeader('Content-Type', 'text/event-stream')
       res.setHeader('Access-Control-Allow-Origin', '*')
 
-      const sendData3 = `data: ${JSON.stringify('Jue 18   -   11:00 AM')}\n\n`;
+      const sendData3 = `data: ${JSON.stringify('Jue 18   -   3:30 PM')}\n\n`;
       res.write(sendData3);
       
 
