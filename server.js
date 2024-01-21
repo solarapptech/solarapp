@@ -11,6 +11,9 @@ const tasamonitor = 38.77;
 // Binance
 const tasabinance = 38.44;
 
+// PayPal
+const tasapaypal = 33.70;
+
 // Euro
 const tasaeuro = 39.32;
 
@@ -70,6 +73,17 @@ app.get ('/info2', (req, res) =>{
 
       },700)
 
+
+      app.get ('/info6', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+  
+        const intervalId = setInterval(() =>{
+          const sendData6 = `data: ${JSON.stringify(tasapaypal) +' Bs.'}\n\n`;
+          res.write(sendData6);
+
+      },700)
+
      
     // app.get ('/info6', (req, res) =>{
     //    res.setHeader('Content-Type', 'text/event-stream')
@@ -99,6 +113,7 @@ app.get ('/info2', (req, res) =>{
    })
   })
  })
+})
 })
 })
 // })
