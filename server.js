@@ -2,10 +2,18 @@ const express = require ('express')
 const app = express ()
 const port = 8000
 
+// Banco Central
+const tasabcv = 36.14;
 
-const tasabcv = 36.14
-const tasamonitor = 38.77
-const tasaeuro = 39.32
+// Monitor Dolar
+const tasamonitor = 38.77;
+
+// Binance
+const tasabinance = 38.99;
+
+// Euro
+const tasaeuro = 39.32;
+
 
 const percent = tasaeuro / tasabcv
 
@@ -72,6 +80,16 @@ app.get ('/info2', (req, res) =>{
        },700)
 
 
+       app.get ('/info7', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+     
+        const intervalId = setInterval(() =>{
+         const sendData7 = `data: ${JSON.stringify(tasabinance) +' Bs.'}\n\n`;
+         res.write(sendData7);
+        },700)
+
+
       res.on('close', () =>{
         console.log('Client Closed Connection')
         clearInterval(intervalId)
@@ -80,6 +98,7 @@ app.get ('/info2', (req, res) =>{
    })
   })
  })
+})
 })
 })
 })
