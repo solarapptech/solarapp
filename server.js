@@ -9,7 +9,7 @@ const tasabcv = 36.14;
 const tasamonitor = 38.77;
 
 // Binance
-const tasabinance = 38.99;
+const tasabinance = 38.44;
 
 // Euro
 const tasaeuro = 39.32;
