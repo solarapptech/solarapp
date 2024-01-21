@@ -67,6 +67,9 @@ app.get ('/info2', (req, res) =>{
         const intervalId = setInterval(() =>{
           const sendData5 = `data: ${JSON.stringify(tasabinance) +' Bs.'}\n\n`;
           res.write(sendData5);
+
+         const sendData6 = `data: ${JSON.stringify(777) +' Bs.'}\n\n`;
+          res.write(sendData6);
       },700)
 
      
