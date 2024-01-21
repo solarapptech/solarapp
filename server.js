@@ -36,8 +36,10 @@ app.get ('/info2', (req, res) =>{
       res.setHeader('Content-Type', 'text/event-stream')
       res.setHeader('Access-Control-Allow-Origin', '*')
 
-      const sendData3 = `data: ${JSON.stringify('Sab 20   -   9:20 PM.')}\n\n`;
-      res.write(sendData3);
+      const intervalId = setInterval(() =>{
+        const sendData3 = `data: ${JSON.stringify('Sab 20   -   9:20 PM.')}\n\n`;
+        res.write(sendData3);
+    },700)
       
 
       app.get ('/info4', (req, res) =>{
@@ -53,12 +55,12 @@ app.get ('/info2', (req, res) =>{
       app.get ('/info5', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
-     
+  
         const intervalId = setInterval(() =>{
-         const sendData5 = `data: ${JSON.stringify(tasabcv * percent) +' Bs.'}\n\n`;
-         res.write(sendData5);
-        },700)
-    
+          const sendData5 = `data: ${JSON.stringify(tasabcv * percent) +' Bs.'}\n\n`;
+          res.write(sendData5);
+      },700)
+
      
     app.get ('/info6', (req, res) =>{
        res.setHeader('Content-Type', 'text/event-stream')
