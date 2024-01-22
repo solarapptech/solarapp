@@ -48,7 +48,7 @@ app.get ('/info2', (req, res) =>{
       res.setHeader('Access-Control-Allow-Origin', '*')
 
       const intervalId = setInterval(() =>{
-        const sendData3 = `data: ${JSON.stringify('Sab 20   -   9:20 PM.')}\n\n`;
+        const sendData3 = `data: ${JSON.stringify('Lun 22   -   10:40 AM.')}\n\n`;
         res.write(sendData3);
     },700)
       
