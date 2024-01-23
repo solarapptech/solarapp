@@ -3,19 +3,19 @@ const app = express ()
 const port = 8000
 
 // Banco Central
-const tasabcv = 36.11;
+const tasabcv = 36.12;
 
 // Monitor Dolar
 const tasamonitor = 38.12;
 
 // Binance
-const tasabinance = 38.44;
+const tasabinance = 38.15;
 
 // PayPal
-const tasapaypal = 33.70;
+const tasapaypal = 33.40;
 
 // Euro
-const tasaeuro = 39.33;
+const tasaeuro = 39.18;
 
 
 const percent = tasaeuro / tasabcv
@@ -48,7 +48,7 @@ app.get ('/info2', (req, res) =>{
       res.setHeader('Access-Control-Allow-Origin', '*')
 
       const intervalId = setInterval(() =>{
-        const sendData3 = `data: ${JSON.stringify('Mar 23   -   9:30 AM.')}\n\n`;
+        const sendData3 = `data: ${JSON.stringify('Mar 23   -   7:10 PM.')}\n\n`;
         res.write(sendData3);
     },700)
       
