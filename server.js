@@ -6,7 +6,7 @@ const port = 8000
 const tasabcv = 36.12;
 
 // Monitor Dolar
-const tasamonitor = 38.19;
+const tasamonitor = 38.18;
 
 // Binance
 const tasabinance = 38.15;
