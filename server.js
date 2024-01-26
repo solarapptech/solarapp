@@ -9,7 +9,7 @@ const tasabcv = 36.11;
 const tasaeuro = 39.16;
 
 // Monitor Dolar
-const tasamonitor = 38.38;
+const tasamonitor = 38.40;
 
 // Binance
 const tasabinance = 38.15;
@@ -50,7 +50,7 @@ app.get ('/info2', (req, res) =>{
       res.setHeader('Access-Control-Allow-Origin', '*')
 
       const intervalId = setInterval(() =>{
-        const sendData3 = `data: ${JSON.stringify('Vie 26   -  1:45 PM.')}\n\n`;
+        const sendData3 = `data: ${JSON.stringify('Vie 26   -  1:55 PM.')}\n\n`;
         res.write(sendData3);
     },700)
       
