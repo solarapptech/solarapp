@@ -15,7 +15,7 @@ const tasabinance = 38.15;
 const tasapaypal = 33.40;
 
 // Euro
-const tasaeuro = 39.38;
+const tasaeuro = 39.16;
 
 
 const percent = tasaeuro / tasabcv
