@@ -5,6 +5,9 @@ const port = 8000
 // Banco Central
 const tasabcv = 36.11;
 
+// Euro
+const tasaeuro = 39.16;
+
 // Monitor Dolar
 const tasamonitor = 38.38;
 
@@ -14,8 +17,7 @@ const tasabinance = 38.15;
 // PayPal
 const tasapaypal = 33.40;
 
-// Euro
-const tasaeuro = 39.16;
+
 
 
 const percent = tasaeuro / tasabcv
@@ -48,7 +50,7 @@ app.get ('/info2', (req, res) =>{
       res.setHeader('Access-Control-Allow-Origin', '*')
 
       const intervalId = setInterval(() =>{
-        const sendData3 = `data: ${JSON.stringify('Vie 26   -  11:30 AM.')}\n\n`;
+        const sendData3 = `data: ${JSON.stringify('Vie 26   -  1:20 PM.')}\n\n`;
         res.write(sendData3);
     },700)
       
