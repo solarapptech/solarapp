@@ -2,6 +2,9 @@ const express = require ('express')
 const app = express ()
 const port = 8000
 
+// Fecha de Actualizado
+const fechas = "Sab 27   -  6:30 PM.";
+
 // Banco Central
 const tasabcv = 36.20;
 
@@ -50,7 +53,7 @@ app.get ('/info2', (req, res) =>{
       res.setHeader('Access-Control-Allow-Origin', '*')
 
       const intervalId = setInterval(() =>{
-        const sendData3 = `data: ${JSON.stringify('Sab 27   -  6:30 PM.')}\n\n`;
+        const sendData3 = `data: ${JSON.stringify(fechas)}\n\n`
         res.write(sendData3);
     },700)
       
