@@ -20,7 +20,7 @@ let tasabinance = 38.15;
 // PayPal
 let tasapaypal = 33.40;
 
-Version Actual
+// Version Actual
 let cur_version = 3;
 
 
