@@ -20,8 +20,8 @@ let tasabinance = 38.15;
 // PayPal
 let tasapaypal = 33.40;
 
-// Version Actual
-// let cur_version = 3;
+Version Actual
+let cur_version = 3;
 
 
 
@@ -96,7 +96,7 @@ app.get ('/info2', (req, res) =>{
         res.setHeader('Access-Control-Allow-Origin', '*')
   
         const intervalId = setInterval(() =>{
-          const sendData7 = `data: ${JSON.stringify(3)}\n\n`;
+          const sendData7 = `data: ${JSON.stringify(cur_version)}\n\n`;
           res.write(sendData7);
 
       },700)
