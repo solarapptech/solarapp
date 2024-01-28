@@ -6,19 +6,19 @@ const port = 8000
 let fechas = "Dom 28   -  3:50 PM.";
 
 // Banco Central
-const tasabcv = 36.20;
+let tasabcv = 36.20;
 
 // Euro
-const tasaeuro = 39.30;
+let tasaeuro = 39.30;
 
 // Monitor Dolar
-const tasamonitor = 38.40;
+let tasamonitor = 38.40;
 
 // Binance
-const tasabinance = 38.15;
+let tasabinance = 38.15;
 
 // PayPal
-const tasapaypal = 33.40;
+let tasapaypal = 33.40;
 
 
 
