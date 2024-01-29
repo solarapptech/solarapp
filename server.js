@@ -3,7 +3,7 @@ const app = express ()
 const port = 8000
 
 // Fecha de Actualizado
-let fechas = "Lun 29   -  1:00 PM.";
+let fechas = "Lun 29   -  2:40 PM.";
 
 // Banco Central
 let tasabcv = 36.20;
