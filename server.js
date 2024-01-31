@@ -6,10 +6,10 @@ const port = 8000
 let fechas = "Mar 30   -  1:20 PM.";
 
 // Banco Central
-let tasabcv = 36.14;
+let tasabcv = 36.20;
 
 // Euro
-let tasaeuro = 39.07;
+let tasaeuro = 39.21;
 
 // Monitor Dolar
 let tasamonitor = 37.89;
