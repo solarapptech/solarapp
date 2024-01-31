@@ -3,13 +3,13 @@ const app = express ()
 const port = 8000
 
 // Fecha de Actualizado
-let fechas = "Mie 31   -  2:50 PM.";
+let fechas = "Mie 31   -  5:00 PM.";
 
 // Banco Central
-let tasabcv = 36.20;
+let tasabcv = 36.26;
 
 // Euro
-let tasaeuro = 39.21;
+let tasaeuro = 39.43;
 
 // Monitor Dolar
 let tasamonitor = 38.18;
