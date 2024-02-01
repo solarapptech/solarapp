@@ -6,7 +6,7 @@ server.keepAliveTimeout = 80000;
 server.headersTimeout = 81000;
 
 // Fecha de Actualizado
-let fechas = "Jue 1   -  5:30 PM.";
+let fechas = "Jue 1   -  7:30 PM.";
 
 // Banco Central
 let tasabcv = 36.23;
