@@ -3,6 +3,7 @@ const app = express ()
 // const port = 8000
 let server = app.listen(8000);
 server.keepAliveTimeout = 30000;
+server.headersTimeout = 31000; 
 
 // Fecha de Actualizado
 let fechas = "Jue 1   -  10:53 AM.";
