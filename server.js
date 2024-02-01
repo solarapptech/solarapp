@@ -2,11 +2,11 @@ const express = require ('express')
 const app = express ()
 // const port = 8000
 let server = app.listen(8000);
-server.keepAliveTimeout = 30000;
-server.headersTimeout = 31000; 
+server.keepAliveTimeout = 130000;
+server.headersTimeout = 131000; 
 
 // Fecha de Actualizado
-let fechas = "Jue 1   -  10:53 AM.";
+let fechas = "Jue 1   -  12:00 PM.";
 
 // Banco Central
 let tasabcv = 36.26;
