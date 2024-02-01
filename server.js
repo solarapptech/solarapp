@@ -41,7 +41,7 @@ app.get ('/info1', (req, res) =>{
 
 app.get ('/info2', (req, res) =>{
       res.setHeader('Content-Type', 'text/event-stream')
-      res.setHeader('Access-Control-Allow-Origin', 'https://render.com/')
+      res.setHeader('Access-Control-Allow-Origin', 'https://solartech.onrender.com/info1')
 
       const intervalId = setInterval(() =>{
       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
@@ -52,7 +52,7 @@ app.get ('/info2', (req, res) =>{
 
     app.get ('/info3', (req, res) =>{
       res.setHeader('Content-Type', 'text/event-stream')
-      res.setHeader('Access-Control-Allow-Origin', 'https://render.com/')
+      res.setHeader('Access-Control-Allow-Origin', '*')
 
       const intervalId = setInterval(() =>{
         const sendData3 = `data: ${JSON.stringify(fechas)}\n\n`
@@ -62,7 +62,7 @@ app.get ('/info2', (req, res) =>{
 
       app.get ('/info4', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
-        res.setHeader('Access-Control-Allow-Origin', 'https://render.com/')
+        res.setHeader('Access-Control-Allow-Origin', '*')
   
         const intervalId = setInterval(() =>{
         const sendData4 = `data: ${tasaeuro}\n\n`;
@@ -72,7 +72,7 @@ app.get ('/info2', (req, res) =>{
 
       app.get ('/info5', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
-        res.setHeader('Access-Control-Allow-Origin', 'https://render.com/')
+        res.setHeader('Access-Control-Allow-Origin', '*')
   
         const intervalId = setInterval(() =>{
           const sendData5 = `data: ${JSON.stringify(tasabinance) +' Bs.'}\n\n`;
@@ -83,7 +83,7 @@ app.get ('/info2', (req, res) =>{
 
       app.get ('/info6', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
-        res.setHeader('Access-Control-Allow-Origin', 'https://render.com/')
+        res.setHeader('Access-Control-Allow-Origin', '*')
   
         const intervalId = setInterval(() =>{
           const sendData6 = `data: ${JSON.stringify(tasapaypal) +' Bs.'}\n\n`;
@@ -93,7 +93,7 @@ app.get ('/info2', (req, res) =>{
 
       app.get ('/info7', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
-        res.setHeader('Access-Control-Allow-Origin', 'https://render.com/')
+        res.setHeader('Access-Control-Allow-Origin', '*')
   
         const intervalId = setInterval(() =>{
           const sendData7 = `data: ${JSON.stringify(cur_version)}\n\n`;
