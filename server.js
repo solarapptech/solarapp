@@ -30,7 +30,7 @@ const percent = tasaeuro / tasabcv
 
 app.get ('/info1', (req, res) =>{
    res.setHeader('Content-Type', 'text/event-stream')
-   res.setHeader('Access-Control-Allow-Origin', 'https://render.com/')
+   res.setHeader('Access-Control-Allow-Origin: https://render.com/')
 
    const intervalId = setInterval(() =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
@@ -41,7 +41,7 @@ app.get ('/info1', (req, res) =>{
 
 app.get ('/info2', (req, res) =>{
       res.setHeader('Content-Type', 'text/event-stream')
-      res.setHeader('Access-Control-Allow-Origin', 'https://solartech.onrender.com/info1')
+      res.setHeader('Access-Control-Allow-Origin: https://solartech.onrender.com/info2')
 
       const intervalId = setInterval(() =>{
       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
