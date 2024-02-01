@@ -171,7 +171,8 @@ res.setHeader('Access-Control-Allow-Origin', '*')
 const intervalId = setInterval(() =>{
 const sendDatab = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
 const sendData2b = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
-res.write(sendDatab, sendData2b);
+res.write(sendDatab);
+res.write(sendData2b);
 },700)
 })
 
