@@ -51,6 +51,8 @@ app.use((req, res, next) => {
 });
 
 
+// Version 1
+
 app.get ('/info1', (req, res) =>{
    res.setHeader('Content-Type', 'text/event-stream')
    res.setHeader('Access-Control-Allow-Origin', '*')
@@ -145,6 +147,8 @@ app.get ('/info2', (req, res) =>{
       //   },700)
 
 
+        
+
       res.on('close', () =>{
         console.log('Client Closed Connection')
         clearInterval(intervalId)
@@ -157,8 +161,19 @@ app.get ('/info2', (req, res) =>{
 })
 })
 })
-// })
-// })
+
+// Version 2
+
+app.get ('/inforeq', (req, res) =>{
+res.setHeader('Content-Type', 'text/event-stream')
+res.setHeader('Access-Control-Allow-Origin', '*')
+
+const intervalId = setInterval(() =>{
+const sendDatab = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
+const sendData2b = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
+res.write(sendDatab, sendData2b);
+},700)
+})
 
 
 // app.listen(port,() => {
