@@ -2,8 +2,8 @@ const express = require ('express')
 const app = express ()
 // const port = 8000
 let server = app.listen(8000);
-server.keepAliveTimeout = 130000;
-server.headersTimeout = 131000; 
+server.keepAliveTimeout = 80000;
+server.headersTimeout = 81000;
 
 // Fecha de Actualizado
 let fechas = "Jue 1   -  12:00 PM.";
