@@ -29,8 +29,8 @@ const percent = tasaeuro / tasabcv
 
 
 app.get ('/info1', (req, res) =>{
-   res.setHeader('Content-Type', 'text/event-stream')
-   res.setHeader('Access-Control-Allow-Origin: https://render.com/')
+   res.setHeader('Content-Type', 'text/event-stream');
+   res.setHeader('Access-Control-Allow-Origin: https://render.com');
 
    const intervalId = setInterval(() =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
