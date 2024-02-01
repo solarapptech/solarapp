@@ -1,6 +1,8 @@
 const express = require ('express')
 const app = express ()
-const port = 8000
+// const port = 8000
+let server = app.listen(8000);
+server.keepAliveTimeout = 30000;
 
 // Fecha de Actualizado
 let fechas = "Jue 1   -  10:53 AM.";
@@ -31,7 +33,6 @@ const percent = tasaeuro / tasabcv
 app.get ('/info1', (req, res) =>{
    res.setHeader('Content-Type', 'text/event-stream')
    res.setHeader('Access-Control-Allow-Origin', '*')
-   res.setHeader('Connection: keep-alive')
 
    const intervalId = setInterval(() =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
