@@ -6,7 +6,7 @@ server.keepAliveTimeout = 80000;
 server.headersTimeout = 81000;
 
 // Fecha de Actualizado
-let fechas = "Vie 2   -  4:00 PM.";
+let fechas = "Vie 2   -  4:55 PM.";
 
 // Banco Central
 let tasabcv = 36.28;
@@ -18,10 +18,10 @@ let tasaeuro = 39.16;
 let tasamonitor = 38.09;
 
 // Binance
-let tasabinance = 38.15;
+let tasabinance = 38.01;
 
 // PayPal
-let tasapaypal = 33.40;
+let tasapaypal = 33.30;
 
 // Version Actual
 let cur_version = 3;
