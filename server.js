@@ -56,19 +56,18 @@ app.use((req, res, next) => {
 
 // Version 1
 
-app.get ('/info1', (req, res, next) =>{
+app.get ('/info1', (req, res) =>{
    res.setHeader('Content-Type', 'text/event-stream')
    res.setHeader('Access-Control-Allow-Origin', '*')
 
    const intervalId = setInterval(() =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
     res.write(sendData);
-    next();
    },700)
 
 
 
-app.get ('/info2', (req, res, next) =>{
+app.get ('/info2', (req, res) =>{
       res.setHeader('Content-Type', 'text/event-stream')
       res.setHeader('Access-Control-Allow-Origin', '*')
 
@@ -79,7 +78,7 @@ app.get ('/info2', (req, res, next) =>{
 
 
 
-    app.get ('/info3', (req, res, next) =>{
+    app.get ('/info3', (req, res) =>{
       res.setHeader('Content-Type', 'text/event-stream')
       res.setHeader('Access-Control-Allow-Origin', '*')
 
@@ -89,7 +88,7 @@ app.get ('/info2', (req, res, next) =>{
     },700)
       
 
-      app.get ('/info4', (req, res, next) =>{
+      app.get ('/info4', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
   
@@ -99,7 +98,7 @@ app.get ('/info2', (req, res, next) =>{
       },700)
 
 
-      app.get ('/info5', (req, res, next) =>{
+      app.get ('/info5', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
   
@@ -110,7 +109,7 @@ app.get ('/info2', (req, res, next) =>{
       },700)
 
 
-      app.get ('/info6', (req, res, next) =>{
+      app.get ('/info6', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
   
@@ -120,7 +119,7 @@ app.get ('/info2', (req, res, next) =>{
 
       },700)
 
-      app.get ('/info7', (req, res, next) =>{
+      app.get ('/info7', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
   
