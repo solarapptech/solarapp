@@ -6,13 +6,13 @@ server.keepAliveTimeout = 80000;
 server.headersTimeout = 81000;
 
 // Fecha de Actualizado
-let fechas = "Vie 2   -  1:45 PM.";
+let fechas = "Vie 2   -  4:00 PM.";
 
 // Banco Central
-let tasabcv = 36.23;
+let tasabcv = 36.28;
 
 // Euro
-let tasaeuro = 39.24;
+let tasaeuro = 39.16;
 
 // Monitor Dolar
 let tasamonitor = 38.09;
