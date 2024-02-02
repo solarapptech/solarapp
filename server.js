@@ -6,7 +6,7 @@ server.keepAliveTimeout = 80000;
 server.headersTimeout = 81000;
 
 // Fecha de Actualizado
-let fechas = "Vie 2   -  4:55 PM.";
+let fechas = "Vie 2   -  7:10 PM.";
 
 // Banco Central
 let tasabcv = 36.28;
@@ -167,6 +167,11 @@ app.get ('/info2', (req, res) =>{
 app.get ('/inforeq', (req, res) =>{
 res.setHeader('Content-Type', 'text/event-stream')
 res.setHeader('Access-Control-Allow-Origin', '*')
+   res.status(200).set({
+        "connection": "keep-alive",
+        "cache-control": "no-cache",
+        "content-Type": "text/event-stream"
+    });
 
 const intervalId = setInterval(() =>{
 const sendDatab = `data: ${JSON.stringify(tasabcv)}\n\n`;
