@@ -60,7 +60,6 @@ app.get ('/info1', (req, res) =>{
    const intervalId = setInterval(() =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
     res.write(sendData);
-    res.end();
    },700)
 
 
@@ -72,7 +71,6 @@ app.get ('/info2', (req, res) =>{
       const intervalId = setInterval(() =>{
       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
       res.write(sendData2);
-      res.end();
     },700)
 
 
@@ -175,7 +173,6 @@ const sendDatab = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
 const sendData2b = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
 res.write(sendDatab);
 res.write(sendData2b);
-res.end();
 },700)
 })
 
