@@ -173,7 +173,7 @@ res.setHeader('Access-Control-Allow-Origin', '*')
 
 const intervalId = setInterval(() =>{
 const sendDatab = `data: ${JSON.stringify(tasabcv, 7)}\n\n`;
-res.write(sendDatab);
+res.write({sendDatab: 1, sendData2b: 2});
 },700)
 })
 
