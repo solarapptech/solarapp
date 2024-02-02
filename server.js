@@ -75,7 +75,6 @@ app.get ('/info2', (req, res, next) =>{
       const intervalId = setInterval(() =>{
       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
       res.write(sendData2);
-      next();
     },700)
 
 
