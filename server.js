@@ -53,12 +53,12 @@ let xval = 5;
 
 // Version 1
 
-app.get ('/info1', async(req, res) =>{
+app.get ('/info1', (req, res) =>{
    res.setHeader('Content-Type', 'text/event-stream')
    res.setHeader('Access-Control-Allow-Origin', '*')
 
     const intervalId = setInterval(() =>{
-    const sendData = await `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
+    const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
     res.write(sendData);
    },700)
 
