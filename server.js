@@ -56,24 +56,26 @@ app.use((req, res, next) => {
 
 // Version 1
 
-app.get ('/info1', (req, res) =>{
+app.get ('/info1', (req, res, next) =>{
    res.setHeader('Content-Type', 'text/event-stream')
    res.setHeader('Access-Control-Allow-Origin', '*')
 
    const intervalId = setInterval(() =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
     res.write(sendData);
+    next();
    },700)
 
 
 
-app.get ('/info2', (req, res) =>{
+app.get ('/info2', (req, res, next) =>{
       res.setHeader('Content-Type', 'text/event-stream')
       res.setHeader('Access-Control-Allow-Origin', '*')
 
       const intervalId = setInterval(() =>{
       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
       res.write(sendData2);
+      next();
     },700)
 
 
