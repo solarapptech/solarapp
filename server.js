@@ -166,7 +166,7 @@ app.get ('/info2', (req, res) =>{
 
 app.get ('/inforeq', (req, res) =>{
 res.setHeader('Content-Type', 'text/event-stream')
-res.setHeader("Access-Control-Allow-Origin", "https://solartech.onrender.com")
+res.setHeader("Access-Control-Allow-Origin", "*")
    res.status(200).set({
         "connection": "keep-alive",
         "cache-control": "no-cache",
