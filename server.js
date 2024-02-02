@@ -1,5 +1,6 @@
 const express = require ('express')
 const app = express ()
+let cors = require('cors')
 // const port = 8000
 let server = app.listen(8000);
 server.keepAliveTimeout = 80000;
@@ -56,6 +57,7 @@ let xval = 5;
 app.get ('/info1', (req, res) =>{
    res.setHeader('Content-Type', 'text/event-stream')
    res.setHeader('Access-Control-Allow-Origin', '*')
+   origin: '*';
 
     const intervalId = setInterval(() =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
