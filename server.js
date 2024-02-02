@@ -1,9 +1,11 @@
+var cors = require('cors')
 const express = require ('express')
 const app = express ()
 // const port = 8000
 let server = app.listen(8000);
 server.keepAliveTimeout = 80000;
 server.headersTimeout = 81000;
+app.use(cors())
 
 // Fecha de Actualizado
 let fechas = "Vie 2   -  7:10 PM.";
