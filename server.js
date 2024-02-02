@@ -56,7 +56,7 @@ app.use((req, res, next) => {
 
 // Version 1
 
-app.get ('/info1', (req, res) =>{
+app.get ('/info1', (req, res, next) =>{
    res.setHeader('Content-Type', 'text/event-stream')
    res.setHeader('Access-Control-Allow-Origin', '*')
 
@@ -64,10 +64,11 @@ app.get ('/info1', (req, res) =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
     res.write(sendData);
    },700)
+  next();
   })
 
 
-app.get ('/info2', (req, res) =>{
+app.get ('/info2', (req, res, next) =>{
       res.setHeader('Content-Type', 'text/event-stream')
       res.setHeader('Access-Control-Allow-Origin', '*')
 
@@ -75,10 +76,11 @@ app.get ('/info2', (req, res) =>{
       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
       res.write(sendData2);
     },700)
+    next();
   })
 
 
-    app.get ('/info3', (req, res) =>{
+    app.get ('/info3', (req, res, next) =>{
       res.setHeader('Content-Type', 'text/event-stream')
       res.setHeader('Access-Control-Allow-Origin', '*')
 
@@ -86,10 +88,11 @@ app.get ('/info2', (req, res) =>{
         const sendData3 = `data: ${JSON.stringify(fechas)}\n\n`
         res.write(sendData3);
     },700)
+      next();
   })
 
 
-      app.get ('/info4', (req, res) =>{
+      app.get ('/info4', (req, res, next) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
   
@@ -97,10 +100,11 @@ app.get ('/info2', (req, res) =>{
         const sendData4 = `data: ${tasaeuro}\n\n`;
         res.write(sendData4);
       },700)
+        next();
     })
 
 
-      app.get ('/info5', (req, res) =>{
+      app.get ('/info5', (req, res, next) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
   
@@ -109,10 +113,11 @@ app.get ('/info2', (req, res) =>{
           res.write(sendData5);
 
       },700)
+        next();
     })
 
 
-      app.get ('/info6', (req, res) =>{
+      app.get ('/info6', (req, res, next) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
   
@@ -121,10 +126,11 @@ app.get ('/info2', (req, res) =>{
           res.write(sendData6);
 
       },700)
+        next();
     })
 
 
-      app.get ('/info7', (req, res) =>{
+      app.get ('/info7', (req, res, next) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
   
@@ -133,6 +139,7 @@ app.get ('/info2', (req, res) =>{
           res.write(sendData7);
 
       },700)
+        next();
    })
      
     // app.get ('/info6', (req, res) =>{
