@@ -1,6 +1,5 @@
 const express = require ('express')
 const app = express ()
-let cors = require('cors')
 // const port = 8000
 let server = app.listen(8000);
 server.keepAliveTimeout = 80000;
