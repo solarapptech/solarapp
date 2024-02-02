@@ -64,7 +64,7 @@ app.get ('/info1', (req, res) =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
     res.write(sendData);
    },700)
-
+  })
 
 
 app.get ('/info2', (req, res) =>{
@@ -75,7 +75,7 @@ app.get ('/info2', (req, res) =>{
       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
       res.write(sendData2);
     },700)
-
+  })
 
 
     app.get ('/info3', (req, res) =>{
@@ -86,7 +86,8 @@ app.get ('/info2', (req, res) =>{
         const sendData3 = `data: ${JSON.stringify(fechas)}\n\n`
         res.write(sendData3);
     },700)
-      
+  })
+
 
       app.get ('/info4', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
@@ -96,6 +97,7 @@ app.get ('/info2', (req, res) =>{
         const sendData4 = `data: ${tasaeuro}\n\n`;
         res.write(sendData4);
       },700)
+    })
 
 
       app.get ('/info5', (req, res) =>{
@@ -107,6 +109,7 @@ app.get ('/info2', (req, res) =>{
           res.write(sendData5);
 
       },700)
+    })
 
 
       app.get ('/info6', (req, res) =>{
@@ -118,6 +121,8 @@ app.get ('/info2', (req, res) =>{
           res.write(sendData6);
 
       },700)
+    })
+
 
       app.get ('/info7', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
@@ -128,7 +133,7 @@ app.get ('/info2', (req, res) =>{
           res.write(sendData7);
 
       },700)
-
+   })
      
     // app.get ('/info6', (req, res) =>{
     //    res.setHeader('Content-Type', 'text/event-stream')
@@ -157,13 +162,6 @@ app.get ('/info2', (req, res) =>{
         clearInterval(intervalId)
       res.end()
      })
-   })
-  })
- })
-})
-})
-})
-})
 
 // Version 2
 
