@@ -26,6 +26,9 @@ let tasapaypal = 33.40;
 // Version Actual
 let cur_version = 3;
 
+// Valor Alterable
+let xval = 7;
+
 
 
 const percent = tasaeuro / tasabcv
@@ -169,10 +172,8 @@ res.setHeader('Content-Type', 'text/event-stream')
 res.setHeader('Access-Control-Allow-Origin', '*')
 
 const intervalId = setInterval(() =>{
-const sendDatab = `data: ${JSON.stringify(tasabcv) +' Bs.', 2}\n\n`;
-const sendData2b = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
+const sendDatab = `data: ${JSON.stringify(tasabcv) +' Bs.', JSON.stringify(xval)}\n\n`;
 res.write(sendDatab);
-res.write(sendData2b);
 },700)
 })
 
