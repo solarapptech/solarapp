@@ -27,7 +27,7 @@ let tasapaypal = 33.40;
 let cur_version = 3;
 
 // Valor Alterable
-let xval = 6;
+let xval = 5;
 
 
 
