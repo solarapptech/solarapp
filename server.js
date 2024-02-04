@@ -168,11 +168,11 @@ app.get ('/info2', (req, res) =>{
 
         
 
-      res.on('close', () =>{
-        console.log('Client Closed Connection')
-        clearInterval(intervalId)
-      res.end()
-})
+//       res.on('close', () =>{
+//         console.log('Client Closed Connection')
+//         clearInterval(intervalId)
+//       res.end()
+// })
 
 
 // Version 2
