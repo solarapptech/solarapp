@@ -65,14 +65,15 @@ let xval =2;
 
 //    },700)
 
-app.get ('/info1', (req, res) =>{
-
+app.post ('/info1', (req, res) =>{
+  res.setHeader('Content-Type', 'text/event-stream')
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  request('https://solartech.onrender.com', function (error, response, body) {
    if (!error && response.statusCode == 200) {
-     res.setHeader('Content-Type', 'text/event-stream')
-     res.setHeader('Access-Control-Allow-Origin', '*')
      const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
      res.write(sendData);
   }
+ });
 })
 
 
