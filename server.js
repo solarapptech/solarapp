@@ -68,10 +68,10 @@ let xval =2;
 app.get ('/info1', (req, res) =>{
   res.setHeader('Content-Type', 'text/event-stream')
   res.setHeader('Access-Control-Allow-Origin', '*')
-  const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
 
-  request(sendData, function (error, response, body) {
+  request('https://render.com/', function (error, response, body) {
    if (!error && response.statusCode == 200) {
+     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
      res.write(sendData);
   }
  });
