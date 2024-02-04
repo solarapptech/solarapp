@@ -68,15 +68,12 @@ let xval =2;
 app.get ('/info1', (req, res) =>{
    res.setHeader('Content-Type', 'text/event-stream')
    res.setHeader('Access-Control-Allow-Origin', '*')
-
-   request('https://solartech.onrender.com', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       const intervalId = setInterval(() =>{
       const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
       res.write(sendData);
     },700)
    }
- });
 })
 
 
@@ -87,10 +84,7 @@ app.get ('/info2', (req, res) =>{
    
       const intervalId = setInterval(() =>{
       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
-
-      if (!error && response.statusCode == 200) {
-        res.write(sendData2);
-    }
+      res.write(sendData2);
 
     },700)
 })
