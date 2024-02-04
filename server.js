@@ -61,7 +61,11 @@ app.get ('/info1', (req, res) =>{
 
     const intervalId = setInterval(() =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
-    res.write(sendData);
+
+    if (!error && response.statusCode == 200) {
+      res.write(sendData);
+  }
+
    },700)
 
 
@@ -72,8 +76,13 @@ app.get ('/info2', (req, res) =>{
    
       const intervalId = setInterval(() =>{
       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
-      res.write(sendData2);
+
+      if (!error && response.statusCode == 200) {
+        res.write(sendData2);
+    }
+
     },700)
+
 
 
 
