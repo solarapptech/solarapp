@@ -58,6 +58,10 @@ let xval =2;
 app.get ('/info1', (req, res) =>{
    res.setHeader('Content-Type', 'text/event-stream')
    res.setHeader('Access-Control-Allow-Origin', '*')
+   res.status(200).set({
+        "connection": "keep-alive",
+        "cache-control": "no-cache",
+    });
 
     const intervalId = setInterval(() =>{
     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
@@ -69,7 +73,11 @@ app.get ('/info1', (req, res) =>{
 app.get ('/info2', (req, res) =>{
       res.setHeader('Content-Type', 'text/event-stream')
       res.setHeader('Access-Control-Allow-Origin', '*')
-
+   res.status(200).set({
+        "connection": "keep-alive",
+        "cache-control": "no-cache",
+    });
+   
       const intervalId = setInterval(() =>{
       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
       res.write(sendData2);
@@ -80,7 +88,11 @@ app.get ('/info2', (req, res) =>{
     app.get ('/info3', (req, res) =>{
       res.setHeader('Content-Type', 'text/event-stream')
       res.setHeader('Access-Control-Allow-Origin', '*')
-
+   res.status(200).set({
+        "connection": "keep-alive",
+        "cache-control": "no-cache",
+    });
+       
       const intervalId = setInterval(() =>{
         const sendData3 = `data: ${JSON.stringify(fechas)}\n\n`
         res.write(sendData3);
@@ -90,7 +102,11 @@ app.get ('/info2', (req, res) =>{
       app.get ('/info4', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
-  
+     res.status(200).set({
+        "connection": "keep-alive",
+        "cache-control": "no-cache",
+    });
+         
         const intervalId = setInterval(() =>{
         const sendData4 = `data: ${tasaeuro}\n\n`;
         res.write(sendData4);
@@ -100,7 +116,11 @@ app.get ('/info2', (req, res) =>{
       app.get ('/info5', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
-  
+     res.status(200).set({
+        "connection": "keep-alive",
+        "cache-control": "no-cache",
+    });
+         
         const intervalId = setInterval(() =>{
           const sendData5 = `data: ${JSON.stringify(tasabinance) +' Bs.'}\n\n`;
           res.write(sendData5);
@@ -111,7 +131,11 @@ app.get ('/info2', (req, res) =>{
       app.get ('/info6', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
-  
+     res.status(200).set({
+        "connection": "keep-alive",
+        "cache-control": "no-cache",
+    });
+         
         const intervalId = setInterval(() =>{
           const sendData6 = `data: ${JSON.stringify(tasapaypal) +' Bs.'}\n\n`;
           res.write(sendData6);
@@ -121,7 +145,11 @@ app.get ('/info2', (req, res) =>{
       app.get ('/info7', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
-  
+     res.status(200).set({
+        "connection": "keep-alive",
+        "cache-control": "no-cache",
+    });
+         
         const intervalId = setInterval(() =>{
           const sendData7 = `data: ${JSON.stringify(cur_version)}\n\n`;
           res.write(sendData7);
