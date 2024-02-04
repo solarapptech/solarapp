@@ -68,7 +68,7 @@ let xval =2;
 app.post ('/info1', (req, res) =>{
   res.setHeader('Content-Type', 'text/event-stream')
   res.setHeader('Access-Control-Allow-Origin', '*')
-  request('https://solartech.onrender.com', function (error, response, body) {
+  request('https://solartech.onrender.com/info1', function (error, response, body) {
    if (!error && response.statusCode == 200) {
      const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
      res.write(sendData);
