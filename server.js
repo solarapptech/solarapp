@@ -64,6 +64,7 @@ app.get ('/info1', (req, res) =>{
     res.write(sendData);
 
    },700)
+})
 
 // app.get ('/info1', (req, res) =>{
 //   res.setHeader('Content-Type', 'text/event-stream')
