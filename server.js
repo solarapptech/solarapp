@@ -102,7 +102,7 @@ app.get ('/info2', (req, res) =>{
     },700)
   }) 
 
-      app.get ('/info4', (req, res, next) =>{
+      app.get ('/info4', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
          
@@ -112,7 +112,7 @@ app.get ('/info2', (req, res) =>{
       },700)
     })
 
-      app.get ('/info5', (req, res, next) =>{
+      app.get ('/info5', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
          
@@ -122,7 +122,7 @@ app.get ('/info2', (req, res) =>{
       },700)
     })
 
-      app.get ('/info6', (req, res, next) =>{
+      app.get ('/info6', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
          
@@ -132,7 +132,7 @@ app.get ('/info2', (req, res) =>{
       },700)
     })
 
-      app.get ('/info7', (req, res, next) =>{
+      app.get ('/info7', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
          
