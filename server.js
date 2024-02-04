@@ -66,14 +66,13 @@ let xval =2;
 //    },700)
 
 app.get ('/info1', (req, res) =>{
-   res.setHeader('Content-Type', 'text/event-stream')
-   res.setHeader('Access-Control-Allow-Origin', '*')
-    if (!error && response.statusCode == 200) {
-      const intervalId = setInterval(() =>{
-      const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
-      res.write(sendData);
-    },700)
-   }
+
+   if (!error && response.statusCode == 200) {
+     res.setHeader('Content-Type', 'text/event-stream')
+     res.setHeader('Access-Control-Allow-Origin', '*')
+     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
+     res.write(sendData);
+  }
 })
 
 
