@@ -8,7 +8,7 @@ server.headersTimeout = 81000;
 app.use(cors())
 
 // Fecha de Actualizado
-let fechas = "Dom 4  -  9:00 AM.";
+let fechas = "Dom 4  -  8:15 AM.";
 
 // Banco Central
 let tasabcv = 36.28;
@@ -29,7 +29,7 @@ let tasapaypal = 33.30;
 let cur_version = 3;
 
 // Valor Alterable
-let xval =3;
+let xval =4;
 
 
 // app.use((req, res, next) => {
