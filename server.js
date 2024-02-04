@@ -82,7 +82,6 @@ app.get ('/info2', (req, res, next) =>{
       const intervalId = setInterval(() =>{
       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
       res.write(sendData2);
-         next();
     },700)
 
 
@@ -98,7 +97,6 @@ app.get ('/info2', (req, res, next) =>{
       const intervalId = setInterval(() =>{
         const sendData3 = `data: ${JSON.stringify(fechas)}\n\n`
         res.write(sendData3);
-         next();
     },700)
       
 
@@ -113,7 +111,6 @@ app.get ('/info2', (req, res, next) =>{
         const intervalId = setInterval(() =>{
         const sendData4 = `data: ${tasaeuro}\n\n`;
         res.write(sendData4);
-           next();
       },700)
 
 
@@ -128,7 +125,6 @@ app.get ('/info2', (req, res, next) =>{
         const intervalId = setInterval(() =>{
           const sendData5 = `data: ${JSON.stringify(tasabinance) +' Bs.'}\n\n`;
           res.write(sendData5);
-next();
       },700)
 
 
@@ -143,7 +139,6 @@ next();
         const intervalId = setInterval(() =>{
           const sendData6 = `data: ${JSON.stringify(tasapaypal) +' Bs.'}\n\n`;
           res.write(sendData6);
-next();
       },700)
 
       app.get ('/info7', (req, res, next) =>{
@@ -157,7 +152,6 @@ next();
         const intervalId = setInterval(() =>{
           const sendData7 = `data: ${JSON.stringify(cur_version)}\n\n`;
           res.write(sendData7);
-next();
       },700)
 
      
