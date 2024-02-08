@@ -11,16 +11,16 @@ app.use(cors())
 let fechas = "Jue 8-  9:22 AM";
 
 // Banco Central
-let tasabcv = 36.25;
+let tasabcv = 36.23;
 
 // Euro
-let tasaeuro = 38.96;
+let tasaeuro = 39.03;
 
 // Monitor Dolar
-let tasamonitor = 37.84;
+let tasamonitor = 37.78;
 
 // Binance
-let tasabinance = 37.80;
+let tasabinance = 37.73;
 
 // PayPal
 let tasapaypal = 33.10;
