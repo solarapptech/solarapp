@@ -20,7 +20,7 @@ let tasaeuro = 39.17;
 let tasamonitor = 37.89;
 
 // Binance
-let tasabinance = 37.56;
+let tasabinance = 37.28;
 
 // PayPal
 let tasapaypal = 33.10;
