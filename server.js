@@ -1,4 +1,3 @@
-
 var cors = require('cors')
 const express = require ('express')
 const app = express ()
@@ -9,7 +8,7 @@ server.headersTimeout = 81000;
 app.use(cors())
 
 // Fecha de Actualizado
-let fechas = "Dom 14 - 12:50 PM";
+let fechas = "Lun 15 - 8:55 AM";
 
 // Banco Central
 let tasabcv = 36.29;
@@ -18,7 +17,7 @@ let tasabcv = 36.29;
 let tasaeuro = 38.58;
 
 // Monitor Dolar
-let tasamonitor = 38.83;
+let tasamonitor = 38.73;
 
 // Binance
 let tasabinance = 39.08;
