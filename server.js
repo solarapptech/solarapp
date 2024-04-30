@@ -23,7 +23,7 @@ let tasamonitor = 39.25;
 let tasabinance = 39.30;
 
 // PayPal
-let tasapaypal = 34.50;
+let tasapaypal = 34.30;
 
 // Version Actual
 let cur_version = 3;
