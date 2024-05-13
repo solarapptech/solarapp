@@ -17,10 +17,10 @@ let tasabcv = 36.61;
 let tasaeuro = 39.31;
 
 // Monitor Dolar
-let tasamonitor = 39.59;
+let tasamonitor = 39.24;
 
 // Binance
-let tasabinance = 39.47;
+let tasabinance = 39.30;
 
 // PayPal
 let tasapaypal = 34.20;
