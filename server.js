@@ -8,7 +8,7 @@ server.headersTimeout = 81000;
 app.use(cors())
 
 // Fecha de Actualizado
-let fechas = "Lun, 10 - 7:00 PM";
+let fechas = "Mar, 11 - 9:00 AM";
 
 // Banco Central
 let tasabcv = 36.45;
