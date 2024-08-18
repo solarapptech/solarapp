@@ -11,7 +11,7 @@ app.use(cors())
 let fechas = "Dom, 18 - 2:20 PM";
 
 // Banco Central
-let tasabcv = 36.67;
+let tasabcv = 36.68;
 
 // Euro
 let tasaeuro = 40.29;
