@@ -14,7 +14,7 @@ let fechas = "Mar, 27 - 6:00 PM";
 let tasabcv = 36.58;
 
 // Euro
-   let tasaeuro = 40.85;
+let tasaeuro = 40.85;
 
 // Monitor Dolar
 let tasamonitor = 43.79;
