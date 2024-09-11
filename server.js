@@ -8,7 +8,7 @@ server.headersTimeout = 81000;
 app.use(cors())
 
 // Fecha de Actualizado
-let fechas = "Mar, 10 - 4:00 PM";
+let fechas = "Mar, 10 - 8:50 PM";
 
 // Banco Central
 let tasabcv = 36.70;
@@ -20,7 +20,7 @@ let tasaeuro = 40.46;
 let tasamonitor = 43.80;
 
 // Binance
-let tasabinance = 43.79;
+let tasabinance = 44.00;
 
 // PayPal
 let tasapaypal = 38.00;
