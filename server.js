@@ -17,7 +17,7 @@ let tasabcv = 45.78;
 let tasaeuro = 48.25;
 
 // Monitor Dolar
-let tasamonitor = 54.19;
+let tasamonitor = 53.97;
 
 // Binance
 let tasabinance = 54.27;
