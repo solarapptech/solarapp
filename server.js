@@ -31,26 +31,53 @@ let cur_version = 3;
 // Valor Alterable
 let xval = 4;
 
+let tasabinance = 0;
+let bncv = 0;
 
-// app.use((req, res, next) => {
-//   res.setHeader(
-//     "Access-Control-Allow-Origin",
-//     "https://solartech.onrender.com"
-//   );
-//   res.setHeader(
-//     "Access-Control-Allow-Methods",
-//     "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,CONNECT,TRACE"
-//   );
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     "Content-Type, Authorization, X-Content-Type-Options, Accept, X-Requested-With, Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
-//   );
-//   res.setHeader("Access-Control-Allow-Credentials", true);
-//   res.setHeader("Access-Control-Allow-Private-Network", true);
-//   res.setHeader("Access-Control-Max-Age", 7200);
 
-//   next();
-// });
+const moment = require('moment-timezone'); 
+require('moment/locale/es'); 
+
+moment.locale('es');  
+let venezuelaTime = moment().tz('America/Caracas').format('dddd, d MMM YYYY, hh:mm A');
+
+app.get ('/info3', (req, res) =>{
+      res.setHeader('Content-Type', 'text/event-stream')
+      res.setHeader('Access-Control-Allow-Origin', '*')
+       
+        const sendData3 = `data: ${JSON.stringify(venezuelaTime)}\n\n`
+        res.write(sendData3);
+       
+})
+
+
+const { spawn } = require('child_process');
+
+const childPython = spawn('python',['apibnc.py']);
+
+childPython.stdout.on('data',(data)=>{
+    tasabinance = `${data}`;
+    bncv = tasabinance.trim();
+    launchinfo();
+})
+
+function launchinfo(){
+app.get ('/info5', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+    
+        const sendData5 = `data: ${bncv +' Bs.'}\n\n`;
+        res.write(sendData5);
+})
+}
+
+childPython.stderr.on('data',(data)=>{
+    console.error(`stderr: ${data}`);
+})
+
+childPython.on('close',(code)=>{
+    console.log(`Se ha cerrado con el codigo ${code}`);
+})
 
 
 // Version 1
@@ -63,18 +90,6 @@ app.get ('/info1', (req, res) =>{
     res.write(sendData);
 
 })
-
-// app.get ('/info1', (req, res) =>{
-//   res.setHeader('Content-Type', 'text/event-stream')
-//   res.setHeader('Access-Control-Allow-Origin', '*')
-
-//   request('*', function (error, response, body) {
-//    if (!error && response.statusCode == 200) {
-//      const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
-//      res.write(sendData);
-//   }
-//  });
-// })
 
 
 
@@ -89,14 +104,14 @@ app.get ('/info2', (req, res) =>{
 })
 
 
-    app.get ('/info3', (req, res) =>{
-      res.setHeader('Content-Type', 'text/event-stream')
-      res.setHeader('Access-Control-Allow-Origin', '*')
+  //   app.get ('/info3', (req, res) =>{
+  //     res.setHeader('Content-Type', 'text/event-stream')
+  //     res.setHeader('Access-Control-Allow-Origin', '*')
        
-        const sendData3 = `data: ${JSON.stringify(fechas)}\n\n`
-        res.write(sendData3);
+  //       const sendData3 = `data: ${JSON.stringify(fechas)}\n\n`
+  //       res.write(sendData3);
        
-  }) 
+  // }) 
 
       app.get ('/info4', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
@@ -108,15 +123,15 @@ app.get ('/info2', (req, res) =>{
          
     })
 
-      app.get ('/info5', (req, res) =>{
-        res.setHeader('Content-Type', 'text/event-stream')
-        res.setHeader('Access-Control-Allow-Origin', '*')
+    //   app.get ('/info5', (req, res) =>{
+    //     res.setHeader('Content-Type', 'text/event-stream')
+    //     res.setHeader('Access-Control-Allow-Origin', '*')
          
 
-          const sendData5 = `data: ${JSON.stringify(tasabinance) +' Bs.'}\n\n`;
-          res.write(sendData5);
+    //       const sendData5 = `data: ${JSON.stringify(tasabinance) +' Bs.'}\n\n`;
+    //       res.write(sendData5);
 
-    })
+    // })
 
       app.get ('/info6', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
