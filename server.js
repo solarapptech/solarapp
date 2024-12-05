@@ -41,7 +41,7 @@ const moment = require('moment-timezone');
 require('moment/locale/es'); 
 
 moment.locale('es');  
-let venezuelaTime = moment().tz('America/Caracas').format('dddd, d MMM YYYY, hh:mm A');
+let venezuelaTime = moment().tz('America/Caracas').format('dddd, D MMM YYYY, hh:mm A');
 
 app.get ('/info3', (req, res) =>{
       res.setHeader('Content-Type', 'text/event-stream')
