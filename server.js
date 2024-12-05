@@ -11,7 +11,9 @@ app.use(cors())
 // let fechas = "Mié. 4 de Dic, 3:30 PM";
 
 // Banco Central
-let tasabcv = 48.11;
+let tasabcv = 0;
+let bcvt = 0;
+// let tasabcv = 48.11;
 
 // Euro
 let tasaeuro = 50.71;
@@ -82,14 +84,32 @@ childPython.on('close',(code)=>{
 
 // Version 1
 
-app.get ('/info1', (req, res) =>{
-   res.setHeader('Content-Type', 'text/event-stream')
-   res.setHeader('Access-Control-Allow-Origin', '*')
+// app.get ('/info1', (req, res) =>{
+//    res.setHeader('Content-Type', 'text/event-stream')
+//    res.setHeader('Access-Control-Allow-Origin', '*')
 
-    const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
-    res.write(sendData);
+//     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
+//     res.write(sendData);
 
+// })
+
+const childPython2 = spawn('python',['bcvapi.py']);
+
+childPython2.stdout.on('data',(data)=>{
+    tasabcv = `${data}`;
+    bcvt = tasabcv.trim();
+    launchinfo2();
 })
+
+function launchinfo2(){
+    app.get ('/info1', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+    
+        const sendData1 = `data: ${bcvt +' Bs.'}\n\n`;
+        res.write(sendData1);
+})
+}
 
 
 
