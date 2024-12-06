@@ -33,3 +33,6 @@ jobs:
       - name: Push changes
         run: |
           git push origin main
+          
+      - name: Run a one-line script
+        run: echo nuevo
