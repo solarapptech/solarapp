@@ -15,11 +15,14 @@ let tasabcv = 0;
 let bcvt = 0;
 // let tasabcv = 48.11;
 
+let tasaparalelo = 0;
+let paral = 0;
+
 // Euro
 let tasaeuro = 50.71;
 
 // Monitor Dolar
-let tasamonitor = 56.84;
+// let tasamonitor = 56.84;
 
 // Binance
 // let tasabinance = 57.93;
@@ -73,15 +76,6 @@ app.get ('/info5', (req, res) =>{
 })
 }
 
-childPython.stderr.on('data',(data)=>{
-    console.error(`stderr: ${data}`);
-})
-
-childPython.on('close',(code)=>{
-    console.log(`Se ha cerrado con el codigo ${code}`);
-})
-
-
 // Version 1
 
 // app.get ('/info1', (req, res) =>{
@@ -111,17 +105,42 @@ function launchinfo2(){
 })
 }
 
+const childPython3 = spawn('python',['apiparalelo.py']);
+
+childPython3.stdout.on('data',(data)=>{
+    tasaparalelo = `${data}`;
+    paral = tasaparalelo.trim();
+    launchinfo3();
+})
+
+function launchinfo3(){
+    app.get ('/info2', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+    
+        const sendData2 = `data: ${paral +' Bs.'}\n\n`;
+        res.write(sendData2);
+})
+}
+
+childPython.stderr.on('data',(data)=>{
+    console.error(`stderr: ${data}`);
+})
+
+childPython.on('close',(code)=>{
+    console.log(`Se ha cerrado con el codigo ${code}`);
+})
 
 
-app.get ('/info2', (req, res) =>{
-      res.setHeader('Content-Type', 'text/event-stream')
-      res.setHeader('Access-Control-Allow-Origin', '*')
+// app.get ('/info2', (req, res) =>{
+//       res.setHeader('Content-Type', 'text/event-stream')
+//       res.setHeader('Access-Control-Allow-Origin', '*')
    
 
-      const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
-      res.write(sendData2);
+//       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
+//       res.write(sendData2);
 
-})
+// })
 
 
   //   app.get ('/info3', (req, res) =>{
