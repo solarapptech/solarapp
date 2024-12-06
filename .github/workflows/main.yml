@@ -1,4 +1,4 @@
-name: Scheduler (5 min)
+name: Sample Scheduler Workflow (Every 5 min)
 
 # Controls when the workflow will run
 on:
@@ -22,17 +22,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Add dot to text file
+        run: |
+          echo "" >> pared.txt
+
       # Runs a single command using the runners shell
       - name: Commit changes
         run: |
           git config --global user.email "solartech4756@gmail.com"
           git config --global user.name "solarapptech"
-          git add .
-          git commit -m "Automated commit by GitHub Actions"
+          git add pared.txt
+          git commit -m "Automated commit"
 
       - name: Push changes
         run: |
           git push origin main
-          
-      - name: Run a one-line script
-        run: echo nuevo
