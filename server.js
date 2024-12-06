@@ -21,8 +21,11 @@ let paral = 0;
 let tasapaypal = 0;
 let payp = 0;
 
+let tasaeuro = 0;
+let euro = 0;
+
 // Euro
-let tasaeuro = 50.71;
+// let tasaeuro = 50.71;
 
 // Monitor Dolar
 // let tasamonitor = 56.84;
@@ -144,6 +147,24 @@ function launchinfo4(){
 })
 }
 
+const childPython5 = spawn('python',['eurapi.py']);
+
+childPython5.stdout.on('data',(data)=>{
+    tasaeuro = `${data}`;
+    euro = tasaeuro.trim();
+    launchinfo5();
+})
+
+function launchinfo5(){
+    app.get ('/info4', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+    
+        const sendData4 = `data: ${euro +' Bs.'}\n\n`;
+        res.write(sendData4);
+})
+}
+
 
 childPython.stderr.on('data',(data)=>{
     console.error(`stderr: ${data}`);
@@ -174,15 +195,15 @@ childPython.on('close',(code)=>{
        
   // }) 
 
-      app.get ('/info4', (req, res) =>{
-        res.setHeader('Content-Type', 'text/event-stream')
-        res.setHeader('Access-Control-Allow-Origin', '*')
+    //   app.get ('/info4', (req, res) =>{
+    //     res.setHeader('Content-Type', 'text/event-stream')
+    //     res.setHeader('Access-Control-Allow-Origin', '*')
          
-        const sendData4 = `data: ${tasaeuro}\n\n`;
-        res.write(sendData4);
+    //     const sendData4 = `data: ${tasaeuro}\n\n`;
+    //     res.write(sendData4);
 
          
-    })
+    // })
 
     //   app.get ('/info5', (req, res) =>{
     //     res.setHeader('Content-Type', 'text/event-stream')
