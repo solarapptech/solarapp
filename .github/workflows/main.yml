@@ -24,7 +24,7 @@ jobs:
 
       - name: Add dot to text file
         run: |
-          echo "." >> pared.txt
+          echo "" >> pared.txt
 
       # Runs a single command using the runners shell
       - name: Commit changes
