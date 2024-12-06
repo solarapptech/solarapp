@@ -4,7 +4,7 @@ name: Sample Scheduler Workflow (Every 5 min)
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   schedule:
-    - cron: '0 0 1 1 *'
+    - cron: '*/5 * * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Add dot to text file
         run: |
-          echo "" >> pared.txt
+          echo "." >> pared.txt
 
       # Runs a single command using the runners shell
       - name: Commit changes
