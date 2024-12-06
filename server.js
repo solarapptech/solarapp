@@ -18,6 +18,9 @@ let bcvt = 0;
 let tasaparalelo = 0;
 let paral = 0;
 
+let tasapaypal = 0;
+let payp = 0;
+
 // Euro
 let tasaeuro = 50.71;
 
@@ -28,7 +31,7 @@ let tasaeuro = 50.71;
 // let tasabinance = 57.93;
 
 // PayPal
-let tasapaypal = 50.50;
+// let tasapaypal = 50.50;
 
 // Version Actual
 let cur_version = 3;
@@ -123,6 +126,25 @@ function launchinfo3(){
 })
 }
 
+const childPython4 = spawn('python',['ppapi.py']);
+
+childPython4.stdout.on('data',(data)=>{
+    tasapaypal = `${data}`;
+    payp = tasapaypal.trim();
+    launchinfo4();
+})
+
+function launchinfo4(){
+    app.get ('/info6', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+    
+        const sendData6 = `data: ${payp +' Bs.'}\n\n`;
+        res.write(sendData6);
+})
+}
+
+
 childPython.stderr.on('data',(data)=>{
     console.error(`stderr: ${data}`);
 })
@@ -172,15 +194,15 @@ childPython.on('close',(code)=>{
 
     // })
 
-      app.get ('/info6', (req, res) =>{
-        res.setHeader('Content-Type', 'text/event-stream')
-        res.setHeader('Access-Control-Allow-Origin', '*')
+    //   app.get ('/info6', (req, res) =>{
+    //     res.setHeader('Content-Type', 'text/event-stream')
+    //     res.setHeader('Access-Control-Allow-Origin', '*')
          
 
-          const sendData6 = `data: ${JSON.stringify(tasapaypal) +' Bs.'}\n\n`;
-          res.write(sendData6);
+    //       const sendData6 = `data: ${JSON.stringify(tasapaypal) +' Bs.'}\n\n`;
+    //       res.write(sendData6);
 
-    })
+    // })
 
       app.get ('/info7', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
