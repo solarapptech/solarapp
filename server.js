@@ -16,7 +16,7 @@ let bcvt = 0;
 // let tasabcv = 48.11;
 
 let tasaparalelo = 0;
-let paral = 0;
+let paral = 57.94;
 
 let tasapaypal = 0;
 let payp = 0;
@@ -111,15 +111,15 @@ function launchinfo2(){
 })
 }
 
-const childPython3 = spawn('python',['apiparalelo.py']);
+// const childPython3 = spawn('python',['apiparalelo.py']);
 
-childPython3.stdout.on('data',(data)=>{
-    tasaparalelo = `${data}`;
-    paral = tasaparalelo.trim();
-    launchinfo3();
-})
+// childPython3.stdout.on('data',(data)=>{
+//     tasaparalelo = `${data}`;
+//     paral = tasaparalelo.trim();
+//     launchinfo3();
+// })
 
-function launchinfo3(){
+// function launchinfo3(){
     app.get ('/info2', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
@@ -127,7 +127,7 @@ function launchinfo3(){
         const sendData2 = `data: ${paral +' Bs.'}\n\n`;
         res.write(sendData2);
 })
-}
+// }
 
 const childPython4 = spawn('python',['ppapi.py']);
 
