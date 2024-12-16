@@ -15,3 +15,6 @@ if response.status_code == 200:
     # Iterar el elemento y extraer el texto
     for elemento in elementos[0]:
         print(elemento.get_text().replace(',', '.'))
+
+    else:
+        pass
