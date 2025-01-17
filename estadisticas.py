@@ -32,12 +32,12 @@ else:
     content = ""
 
 # Contar el número de días desde una fecha de inicio
-start_date = datetime(2025, 1, 16)
+start_date = datetime(2025, 1, 15)
 today = datetime.now()
 days_passed = (today - start_date).days
 
 # Generar tantos números aleatorios como días pasados más uno
-bcv_numbers = [str(5) for _ in range(days_passed + 1)]
+bcv_numbers = [str('5') for _ in range(days_passed + 1)]
 
 # Unir los números aleatorios y el contenido anterior si existe
 new_content = ", ".join(bcv_numbers)
