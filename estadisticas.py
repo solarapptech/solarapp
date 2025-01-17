@@ -32,7 +32,7 @@ else:
     content = ""
 
 # Contar el número de días desde una fecha de inicio
-start_date = datetime(2025, 1, 15)
+start_date = datetime(2025, 1, 17)
 today = datetime.now()
 days_passed = (today - start_date).days
 
