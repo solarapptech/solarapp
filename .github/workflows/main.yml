@@ -42,7 +42,7 @@ jobs:
           python-version: '3.x'
 
       - name: Run script
-        run: estadisticas.py
+        run: python estadisticas.py
 
       - name: Upload output.txt
         uses: actions/upload-artifact@v3
