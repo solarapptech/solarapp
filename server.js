@@ -122,7 +122,7 @@ function launchinfo2(){
 // })
 
 // function launchinfo3(){
-    app.get ('/info2', (req, res) =>{
+app.get ('/info2', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
     
@@ -235,6 +235,14 @@ childPython.on('close',(code)=>{
           const sendData7 = `data: ${JSON.stringify(cur_version)}\n\n`;
           res.write(sendData7);
 
+})
+
+app.get ('/info8', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+    
+        const sendData2 = `data: ${graf_bcv}\n\n`;
+        res.write(sendData8);
 })
      
     // app.get ('/info6', (req, res) =>{
