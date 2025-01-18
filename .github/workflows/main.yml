@@ -35,7 +35,7 @@ jobs:
           git config --global user.email "solartech4756@gmail.com"
           git config --global user.name "solarapptech"
           git add pared.txt
-          git add output.txt
+          git add output.js
           git commit -m "Automated commit"
 
       - name: Push changes
