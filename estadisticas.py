@@ -15,4 +15,4 @@ if response.status_code == 200:
     # Iterar el elemento y extraer el texto
 
     with open("output.txt", "w") as file:
-        file.write(elementos[4])
+        file.write(elementos)
