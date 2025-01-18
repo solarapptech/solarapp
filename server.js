@@ -241,7 +241,7 @@ app.get ('/info8', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
     
-        const sendData2 = `data: ${graf_bcv}\n\n`;
+        const sendData8 = `data: ${graf_bcv}\n\n`;
         res.write(sendData8);
 })
      
