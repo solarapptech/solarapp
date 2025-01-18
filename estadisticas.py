@@ -21,7 +21,7 @@ if response.status_code == 200:
     venezuela_tz = pytz.timezone('America/Caracas')
 
     # Leer el contenido actual del archivo
-    if os.path.exists('output.txt'):
+    if os.path.exists('output.js'):
         with open('output.txt', 'r') as file:
             content = file.read().strip()
     else:
@@ -45,5 +45,5 @@ if response.status_code == 200:
     new_content = ", ".join(bcv_numbers)
 
     # Escribir el nuevo contenido en el archivo (sin saltos de línea)
-    with open('output.txt', 'w') as file:
+    with open('output.js', 'w') as file:
         file.write(new_content)
