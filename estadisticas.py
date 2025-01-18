@@ -1,6 +1,10 @@
 import os
 import random
 from datetime import datetime, timedelta
+import pytz
+
+# Definir la zona horaria de Venezuela
+venezuela_tz = pytz.timezone('America/Caracas')
 
 # Leer el contenido actual del archivo
 if os.path.exists('output.txt'):
@@ -12,9 +16,9 @@ else:
 # Convertir el contenido en una lista
 bcv_numbers = content.split(", ") if content else []
 
-# Contar el número de días desde una fecha de inicio
-start_date = datetime(2025, 1, 17)
-today = datetime.now()
+# Contar el número de días desde una fecha de inicio en la zona horaria de Venezuela
+start_date = datetime(2025, 1, 17, tzinfo=venezuela_tz)
+today = datetime.now(venezuela_tz)
 days_passed = (today - start_date).days
 
 # Generar un número aleatorio solo para el día actual
