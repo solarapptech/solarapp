@@ -1,3 +1,3 @@
 
 
-module.exports = { valor };
+module.exports = { graf_bcv };
