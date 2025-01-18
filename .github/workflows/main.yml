@@ -13,10 +13,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Add dot to text file
-        run: |
-          echo "." >> pared.txt
                 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -34,7 +30,6 @@ jobs:
         run: |
           git config --global user.email "solartech4756@gmail.com"
           git config --global user.name "solarapptech"
-          git add pared.txt
           git add output.txt
           git commit -m "Automated commit"
 
