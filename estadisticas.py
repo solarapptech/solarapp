@@ -13,6 +13,7 @@ if response.status_code == 200:
     elementos = soup.find_all(class_='col-sm-6 col-xs-6 centrado')
 
     # Iterar el elemento y extraer el texto
-
-    with open("output.txt", "w") as file:
-        file.write(str(elementos))
+    for elemento in elementos[4]:
+        with open("intermedio.txt", "w") as file:
+            file.write(str(elemento.get_text().replace(',', '.')))
+            # print(elemento.get_text().replace(',', '.'))
