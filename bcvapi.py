@@ -16,5 +16,6 @@ if response.status_code == 200:
     for elemento in elementos[4]:
         print(elemento.get_text().replace(',', '.'))
         valor = elemento.get_text().replace(',', '.')
-    with open("output.txt", "w") as file:
-        file.write('Test')
+        
+with open("output.txt", "w") as file:
+    file.write('Test')
