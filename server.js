@@ -7,6 +7,8 @@ server.keepAliveTimeout = 80000;
 server.headersTimeout = 81000;
 app.use(cors())
 
+const { graf_bcv } = require('./output');
+
 // Fecha de Actualizado
 // let fechas = "Mié. 4 de Dic, 3:30 PM";
 
