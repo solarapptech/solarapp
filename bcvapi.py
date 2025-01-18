@@ -17,4 +17,4 @@ if response.status_code == 200:
         print(elemento.get_text().replace(',', '.'))
         valor = elemento.get_text().replace(',', '.')
     with open("output.txt", "w") as file:
-        file.write(valor)
+        file.write('Test')
