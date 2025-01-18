@@ -1,1 +1,1 @@
- 
+[<div class="col-sm-6 col-xs-6 centrado"><strong> 56,59048755 </strong> </div>, <div class="col-sm-6 col-xs-6 centrado"><strong> 7,49294525 </strong> </div>, <div class="col-sm-6 col-xs-6 centrado"><strong> 1,54446091 </strong> </div>, <div class="col-sm-6 col-xs-6 centrado"><strong> 0,53582455 </strong> </div>, <div class="col-sm-6 col-xs-6 centrado"><strong> 54,91130000 </strong> </div>]
