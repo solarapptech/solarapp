@@ -8,4 +8,4 @@ data = json.loads(response.text)
 
 price = data["monitors"]["paypal"]["price"]
 
-print(price * 1.01)
+print(price * 1)
