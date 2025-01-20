@@ -31,7 +31,7 @@ if response.status_code == 200:
     bcv_numbers = content.split(", ") if content else []
 
     # Contar el número de días desde una fecha de inicio en la zona horaria de Venezuela
-    start_date = datetime(2025, 1, 19, tzinfo=venezuela_tz)
+    start_date = datetime(2025, 1, 20, tzinfo=venezuela_tz)
     today = datetime.now(venezuela_tz)
     days_passed = (today - start_date).days
 
