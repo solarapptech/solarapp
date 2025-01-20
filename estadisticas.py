@@ -37,7 +37,7 @@ if response.status_code == 200:
 
     # Generar un número aleatorio solo para el día actual
     if len(bcv_numbers) <= days_passed:
-        bcv_numbers.append(valor)  # Puedes ajustar el rango según tus necesidades
+        bcv_numbers.append(str(valor))  # Puedes ajustar el rango según tus necesidades
     else:
         bcv_numbers[days_passed] = str(valor)
 
