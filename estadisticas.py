@@ -48,4 +48,3 @@ if response.status_code == 200:
     with open('output.js', 'w') as file:
         # file.write(f"const graf_bcv = [{new_content}];\nmodule.exports = {{ graf_bcv }};")
         file.write(f"const graf_bcv = [{new_content}];\n")
-        file.write("module.exports = { graf_bcv };\n")
