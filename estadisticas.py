@@ -22,7 +22,7 @@ if response.status_code == 200:
 
     # Leer el contenido actual del archivo
     if os.path.exists('output.js'):
-        with open('output.txt', 'r') as file:
+        with open('output.js', 'r') as file:
             content = file.read().strip()
     else:
         content = ""
