@@ -39,7 +39,7 @@ if response.status_code == 200:
     if len(bcv_numbers) <= days_passed:
         bcv_numbers.append(str(valor))  # Puedes ajustar el rango según tus necesidades
     else:
-        bcv_numbers[days_passed] = str(valor)
+        bcv_numbers[days_passed] = str(77)
 
     # Unir los números y el contenido anterior si existe
     new_content = ", ".join(bcv_numbers)
