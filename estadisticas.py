@@ -43,8 +43,10 @@ if response.status_code == 200:
 
     # Unir los números y el contenido anterior si existe
     new_content = ", ".join(bcv_numbers)
-
+    
+    with open('output.js', 'w') as file:
+        file.write('')
     # Escribir el nuevo contenido en el archivo (sin saltos de línea)
     with open('output.js', 'w') as file:
-        # file.write(f"const graf_bcv = [{new_content}];\nmodule.exports = {{ graf_bcv }};")
-        file.write(f"const graf_bcv = [{new_content}];\n")
+        file.write(f"const graf_bcv = [{new_content}];\nmodule.exports = {{ graf_bcv }};")
+        # file.write(f"const graf_bcv = [{new_content}];\n")
