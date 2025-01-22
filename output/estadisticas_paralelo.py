@@ -20,8 +20,6 @@ match = re.search(r'let paral = (\d+);', content)
 if match:
     paral = match.group(1)
 
-if response.status_code == 200:
-    
     # Definir la zona horaria de Venezuela
     venezuela_tz = pytz.timezone('America/Caracas')
 
