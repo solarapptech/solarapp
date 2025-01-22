@@ -14,10 +14,10 @@ url = 'https://github.com/solarapptech/solarapp/blob/main/server.js'
 
 # Contenido del archivo
 response = requests.get(url)
-content = response.text
 
 if response.status_code == 200:
-    
+
+    content = response.text
     # Encontrar el valor de paral
     match = re.search(r'const paral = (\d+);', content)
 
@@ -27,12 +27,12 @@ if response.status_code == 200:
     # Leer el contenido actual del archivo
     if os.path.exists(ruta):
         with open(ruta, 'r') as file:
-            content = file.read().strip()
+            content_file = file.read().strip()
     else:
-        content = ""
+        content_file = ""
 
     # Convertir el contenido en una lista
-    paralelo_numbers = content.replace("const graf_paralelo = [", "").replace("];\nmodule.exports = { graf_paralelo };", "").split(", ") if content else []
+    paralelo_numbers = content_file.replace("const graf_paralelo = [", "").replace("];\nmodule.exports = { graf_paralelo };", "").split(", ") if content else []
     
     # Contar el número de días desde una fecha de inicio en la zona horaria de Venezuela
     start_date = datetime(2025, 1, 20, tzinfo=venezuela_tz)
