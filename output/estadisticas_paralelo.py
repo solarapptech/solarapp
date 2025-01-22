@@ -19,7 +19,7 @@ if response.status_code == 200:
 
     content = response.text
     # Encontrar el valor de paral
-    match = re.search(r'const paral = ;', content)
+    match = re.search(r'let paral = (\d+);', content)
     if match:
         paral = match.group(1)
     else:
