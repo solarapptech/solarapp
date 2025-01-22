@@ -20,8 +20,7 @@ if response.status_code == 200:
     content = response.text
     # Encontrar el valor de paral
     match = re.search(r'const paral = (\d+);', content)
-    paral = match.group(1)
-
+    
     # Definir la zona horaria de Venezuela
     venezuela_tz = pytz.timezone('America/Caracas')
 
@@ -40,15 +39,17 @@ if response.status_code == 200:
     today = datetime.now(venezuela_tz)
     days_passed = (today - start_date).days
 
-    # Check de tiempo
-    if len(paralelo_numbers) <= days_passed:
-        paralelo_numbers.append(str(paral)) 
-    else:
-        paralelo_numbers[days_passed] = str(paral)
+    if match:
+        paral = match.group(1)
+        # Check de tiempo
+        if len(paralelo_numbers) <= days_passed:
+            paralelo_numbers.append(str(paral)) 
+        else:
+            paralelo_numbers[days_passed] = str(paral)
 
-    # Unir los números y el contenido anterior si existe
-    new_content = ", ".join(paralelo_numbers)
-    
-    # Escribir el nuevo contenido en el archivo (sin saltos de línea)
-    with open(ruta, 'w') as file:
-        file.write(f"const graf_paralelo = [{new_content}];\nmodule.exports = {{ graf_paralelo }};")
+        # Unir los números y el contenido anterior si existe
+        new_content = ", ".join(paralelo_numbers)
+        
+        # Escribir el nuevo contenido en el archivo (sin saltos de línea)
+        with open(ruta, 'w') as file:
+            file.write(f"const graf_paralelo = [{new_content}];\nmodule.exports = {{ graf_paralelo }};")
