@@ -10,7 +10,7 @@ archivo = 'outputParalelo.js'
 ruta = os.path.join(directorio, archivo)
 
 # URL 
-url = 'https://github.com/solarapptech/solarapp/blob/main/server.js'
+url = 'https://raw.githubusercontent.com/solarapptech/solarapp/main/server.js'
 
 # Contenido del archivo
 response = requests.get(url)
