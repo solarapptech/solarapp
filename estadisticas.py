@@ -29,8 +29,9 @@ if response.status_code == 200:
 
     # Convertir el contenido en una lista
     # bcv_numbers = content.split(", ") if content else []
-    bcv_numbers = content.replace("const graf_bcv = [", "").replace("];\nmodule.exports = { graf_bcv };", "").split(", ") if content else
-
+    bcv_numbers = content.replace("const graf_bcv = [", "").replace("];\nmodule.exports = { graf_bcv };", "").split(", ") if content else []
+    # bcv_numbers = content.replace("const graf_bcv = [", "").replace("];\nmodule.exports = { graf_bcv };", "").split(", ") if content else []
+    
     # Contar el número de días desde una fecha de inicio en la zona horaria de Venezuela
     start_date = datetime(2025, 1, 20, tzinfo=venezuela_tz)
     today = datetime.now(venezuela_tz)
