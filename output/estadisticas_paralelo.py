@@ -11,7 +11,6 @@ ruta = os.path.join(directorio, archivo)
 
 with open('server.js', 'r') as file:
     js_code = file.read()
-    
 
 ctx = execjs.compile(js_code)
 paral = ctx.eval('paral')
