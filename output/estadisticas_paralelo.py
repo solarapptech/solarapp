@@ -11,9 +11,10 @@ ruta = os.path.join(directorio, archivo)
 
 with open('server.js', 'r') as file:
     js_code = file.read()
+    
 
 ctx = execjs.compile(js_code)
-paralelo = ctx.eval('paral')
+paral = ctx.eval('paral')
 
 # Zona horaria de Venezuela
 venezuela_tz = pytz.timezone('America/Caracas')
@@ -35,9 +36,9 @@ days_passed = (today - start_date).days
 
 # Check de tiempo
 if len(paralelo_numbers) <= days_passed:
-    paralelo_numbers.append(str(paralelo)) 
+    paralelo_numbers.append(str(paral)) 
 else:
-    paralelo_numbers[days_passed] = str(paralelo)
+    paralelo_numbers[days_passed] = str(paral)
 
 # Unir los números y el contenido anterior si existe
 new_content = ", ".join(paralelo_numbers)
