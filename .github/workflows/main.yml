@@ -35,6 +35,9 @@ jobs:
       - name: Run script 3
         run: python output/estadisticas_payp.py
 
+      - name: Run script 4
+        run: python output/estadisticas_paralelo.py
+
 
       # Runs a single command using the runners shell
       - name: Commit changes
@@ -45,6 +48,7 @@ jobs:
           git add output.js
           git add output/outputBcv_eur.js
           git add output/outputPayp.js
+          git add output/outputParalelo.js
           git commit -m "Automated commit"
 
       - name: Push changes
