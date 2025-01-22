@@ -21,6 +21,9 @@ if response.status_code == 200:
     # Encontrar el valor de paral
     match = re.search(r'const paral = (\d+);', content)
 
+    if match:
+        paral = match.group(1)
+
     # Definir la zona horaria de Venezuela
     venezuela_tz = pytz.timezone('America/Caracas')
 
@@ -41,9 +44,9 @@ if response.status_code == 200:
 
     # Check de tiempo
     if len(paralelo_numbers) <= days_passed:
-        paralelo_numbers.append(str(match)) 
+        paralelo_numbers.append(str(paral)) 
     else:
-        paralelo_numbers[days_passed] = str(match)
+        paralelo_numbers[days_passed] = str(paral)
 
     # Unir los números y el contenido anterior si existe
     new_content = ", ".join(paralelo_numbers)
