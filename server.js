@@ -19,12 +19,14 @@ let bcvt = 0;
 
 let tasaparalelo = 0;
 let paral = 65.48;
+module.exports = { paral };
 
 let tasapaypal = 0;
 let payp = 0;
 
 let tasaeuro = 0;
 let euro = 0;
+
 
 // Euro
 // let tasaeuro = 50.71;
