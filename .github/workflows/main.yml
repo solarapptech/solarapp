@@ -39,6 +39,7 @@ jobs:
           git config --global user.name "solarapptech"
           git add pared.txt
           git add output.js
+          git add output/outputBcv_eur.js
           git commit -m "Automated commit"
 
       - name: Push changes
