@@ -29,6 +29,9 @@ jobs:
       - name: Run script
         run: python estadisticas.py
 
+      - name: Run script 2
+        run: python estadisticas_eur.py
+
       # Runs a single command using the runners shell
       - name: Commit changes
         run: |
