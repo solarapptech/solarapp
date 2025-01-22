@@ -15,10 +15,11 @@ url = 'https://github.com/solarapptech/solarapp/blob/main/server.js'
 # Contenido del archivo
 response = requests.get(url)
 content = response.text
-# Encontrar el valor de paral
-match = re.search(r'const paral = (\d+);', content)
 
 if response.status_code == 200:
+    
+    # Encontrar el valor de paral
+    match = re.search(r'const paral = (\d+);', content)
 
     # Definir la zona horaria de Venezuela
     venezuela_tz = pytz.timezone('America/Caracas')
