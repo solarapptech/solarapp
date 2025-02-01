@@ -8,6 +8,7 @@ app.use(cors())
 
 const { graf_bcv } = require('./output');
 const { graf_eur } = require('./output/outputBcv_eur.js');
+const { graf_payp } = require('./output/outputPayp.js');
 
 let tasabcv = 0;
 let bcvt = 0;
@@ -164,6 +165,14 @@ app.get ('/info9', (req, res) =>{
 
     const sendData9 = `data: ${graf_eur}\n\n`;
     res.write(sendData9);
+})
+
+app.get ('/info10', (req, res) =>{
+    res.setHeader('Content-Type', 'text/event-stream')
+    res.setHeader('Access-Control-Allow-Origin', '*')
+
+    const sendData10 = `data: ${graf_payp}\n\n`;
+    res.write(sendData10);
 })
      
 // app.get ('/info6', (req, res) =>{
