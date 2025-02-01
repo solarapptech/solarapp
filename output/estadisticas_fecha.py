@@ -1,20 +1,18 @@
 import os
 from datetime import datetime, timedelta
 import pytz
-import locale
+from babel.dates import format_date
 
 # Directorio
 directorio = 'output'
 archivo = 'outputFecha.js'
 ruta = os.path.join(directorio, archivo)
 
-locale.setlocale(locale.LC_TIME, 'es_ES')
-
 # Definir la zona horaria de Venezuela
 venezuela_tz = pytz.timezone('America/Caracas')
 current_time = datetime.now(venezuela_tz)
 
-formatted_date = current_time.strftime('%d %b %Y')
+formatted_date = format_date(current_time, format='d MMM YYYY', locale='es')
 
 # Leer el contenido actual del archivo
 if os.path.exists(ruta):
