@@ -4,6 +4,11 @@ import os
 from datetime import datetime, timedelta
 import pytz
 
+# Directorio
+directorio = 'output'
+archivo = 'outputBcv.js'
+ruta = os.path.join(directorio, archivo)
+
 # bcv 
 url = 'https://www.bcv.org.ve/'
 response = requests.get(url, verify=False)
@@ -11,16 +16,18 @@ response = requests.get(url, verify=False)
 if response.status_code == 200:
     # Parseo de HTML
     soup = BeautifulSoup(response.content, 'html.parser')
+
     # Clase específica
     elementos = soup.find_all(class_='col-sm-6 col-xs-6 centrado')
+
     valor = elementos[4].get_text().replace(',', '.') if len(elementos) > 4 else "N/A"
 
     # Definir la zona horaria de Venezuela
     venezuela_tz = pytz.timezone('America/Caracas')
 
     # Leer el contenido actual del archivo
-    if os.path.exists('output.js'):
-        with open('output.js', 'r') as file:
+    if os.path.exists(ruta):
+        with open(ruta, 'r') as file:
             content = file.read().strip()
     else:
         content = ""
@@ -43,5 +50,5 @@ if response.status_code == 200:
     new_content = ", ".join(bcv_numbers)
     
     # Escribir el nuevo contenido en el archivo (sin saltos de línea)
-    with open('output.js', 'w') as file:
+    with open(ruta, 'w') as file:
         file.write(f"const graf_bcv = [{new_content}];\nmodule.exports = {{ graf_bcv }};")
