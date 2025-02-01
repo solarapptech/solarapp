@@ -37,8 +37,8 @@ else:
     fecha_nums[days_passed] = str(formatted_date)
 
 # Unir los números y el contenido anterior si existe
-new_content = ", ".join(str(fecha_nums))
+new_content = ", ".join(fecha_nums)
 
 # Escribir el nuevo contenido en el archivo (sin saltos de línea)
 with open(ruta, 'w') as file:
-    file.write(f"const graf_fecha = [{new_content}];\nmodule.exports = {{ graf_fecha }};")
+    file.write(f"const graf_fecha = [{str(new_content)}];\nmodule.exports = {{ graf_fecha }};")
