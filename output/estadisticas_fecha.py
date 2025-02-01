@@ -8,7 +8,7 @@ directorio = 'output'
 archivo = 'outputFecha.js'
 ruta = os.path.join(directorio, archivo)
 
-locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
+locale.setlocale(locale.LC_TIME, 'es_ES')
 
 # Definir la zona horaria de Venezuela
 venezuela_tz = pytz.timezone('America/Caracas')
