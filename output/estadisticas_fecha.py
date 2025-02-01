@@ -13,6 +13,7 @@ venezuela_tz = pytz.timezone('America/Caracas')
 current_time = datetime.now(venezuela_tz)
 
 formatted_date = format_date(current_time, format='d MMM YYYY', locale='es')
+formatted_date_q = f"'{formatted_date}'"
 
 # Leer el contenido actual del archivo
 if os.path.exists(ruta):
@@ -32,9 +33,9 @@ days_passed = (today - start_date).days
 
 # Check de tiempo
 if len(fecha_nums) <= days_passed:
-    fecha_nums.append(str(formatted_date)) 
+    fecha_nums.append(str(formatted_date_q)) 
 else:
-    fecha_nums[days_passed] = str(formatted_date)
+    fecha_nums[days_passed] = str(formatted_date_q)
 
 # Unir los números y el contenido anterior si existe
 new_content = ", ".join(fecha_nums)
