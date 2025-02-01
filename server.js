@@ -6,6 +6,7 @@ server.keepAliveTimeout = 80000;
 server.headersTimeout = 81000;
 app.use(cors())
 
+const { graf_fecha } = require('./output/outputFecha.js');
 const { graf_bcv } = require('./output/outputBcv.js');
 const { graf_eur } = require('./output/outputBcv_eur.js');
 const { graf_paralelo } = require('./output/outputParalelo.js');
@@ -182,6 +183,14 @@ app.get ('/info11', (req, res) =>{
 
     const sendData11 = `data: ${graf_paralelo}\n\n`;
     res.write(sendData11);
+})
+
+app.get ('/info12', (req, res) =>{
+    res.setHeader('Content-Type', 'text/event-stream')
+    res.setHeader('Access-Control-Allow-Origin', '*')
+
+    const sendData12 = `data: ${graf_fecha}\n\n`;
+    res.write(sendData12);
 })
 
 // Version 2
