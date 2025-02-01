@@ -6,7 +6,7 @@ server.keepAliveTimeout = 80000;
 server.headersTimeout = 81000;
 app.use(cors())
 
-const { graf_bcv } = require('./output');
+const { graf_bcv } = require('./output/outputBcv.js');
 const { graf_eur } = require('./output/outputBcv_eur.js');
 const { graf_payp } = require('./output/outputPayp.js');
 
