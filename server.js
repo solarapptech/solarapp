@@ -8,6 +8,7 @@ app.use(cors())
 
 const { graf_bcv } = require('./output/outputBcv.js');
 const { graf_eur } = require('./output/outputBcv_eur.js');
+const { graf_paralelo } = require('./output/outputParalelo.js');
 const { graf_payp } = require('./output/outputPayp.js');
 
 let tasabcv = 0;
@@ -174,29 +175,14 @@ app.get ('/info10', (req, res) =>{
     const sendData10 = `data: ${graf_payp}\n\n`;
     res.write(sendData10);
 })
-     
-// app.get ('/info6', (req, res) =>{
-//    res.setHeader('Content-Type', 'text/event-stream')
-//    res.setHeader('Access-Control-Allow-Origin', '*')
 
-//    const intervalId = setInterval(() =>{
-//     const sendData6 = `data: ${JSON.stringify(tasamonitor * percent) +' Bs.'}\n\n`;
-//     res.write(sendData6);
-//    },700)
+app.get ('/info11', (req, res) =>{
+    res.setHeader('Content-Type', 'text/event-stream')
+    res.setHeader('Access-Control-Allow-Origin', '*')
 
-
-//  app.get ('/info7', (req, res) =>{
-//   res.setHeader('Content-Type', 'text/event-stream')
-//   res.setHeader('Access-Control-Allow-Origin', '*')
-
-//   const intervalId = setInterval(() =>{
-//    const sendData7 = `data: ${JSON.stringify(tasabinance) +' Bs.'}\n\n`;
-//    res.write(sendData7);
-//   },700)
-
-
-        
-
+    const sendData11 = `data: ${graf_paralelo}\n\n`;
+    res.write(sendData11);
+})
 
 // Version 2
 
