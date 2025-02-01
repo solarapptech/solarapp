@@ -14,12 +14,12 @@ url = 'https://raw.githubusercontent.com/solarapptech/solarapp/main/server.js'
 
 # Contenido del archivo
 response = requests.get(url)
-content = response.text
 
 if response.status_code == 200:
 
+    content = response.text
     # Encontrar el valor de paral
-    match = re.search(r'let paral = (\d+);', content)
+    match = re.search(r'let paral\s*=\s*([\d.]+);', content)
     if match:
         paral = match.group(1)
     else:
