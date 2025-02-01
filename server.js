@@ -8,7 +8,7 @@ server.headersTimeout = 81000;
 app.use(cors())
 
 const { graf_bcv } = require('./output');
-const { graf_bcvEur } = require('output/outputBcv_eur.js');
+const { graf_bcvEur } = require('output/outputBcv_eur');
 
 // Fecha de Actualizado
 // let fechas = "Mié. 4 de Dic, 3:30 PM";
