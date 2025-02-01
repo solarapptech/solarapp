@@ -1,7 +1,6 @@
 var cors = require('cors')
 const express = require ('express')
 const app = express ()
-// const port = 8000
 let server = app.listen(8000);
 server.keepAliveTimeout = 80000;
 server.headersTimeout = 81000;
@@ -10,13 +9,8 @@ app.use(cors())
 const { graf_bcv } = require('./output');
 const { graf_eur } = require('./output/outputBcv_eur.js');
 
-// Fecha de Actualizado
-// let fechas = "Mié. 4 de Dic, 3:30 PM";
-
-// Banco Central
 let tasabcv = 0;
 let bcvt = 0;
-// let tasabcv = 48.11;
 
 let tasaparalelo = 0;
 let paral = 68.34;
@@ -26,19 +20,6 @@ let payp = 0;
 
 let tasaeuro = 0;
 let euro = 0;
-
-
-// Euro
-// let tasaeuro = 50.71;
-
-// Monitor Dolar
-// let tasamonitor = 56.84;
-
-// Binance
-// let tasabinance = 57.93;
-
-// PayPal
-// let tasapaypal = 50.50;
 
 // Version Actual
 let cur_version = 3;
@@ -86,16 +67,6 @@ app.get ('/info5', (req, res) =>{
 })
 }
 
-// Version 1
-
-// app.get ('/info1', (req, res) =>{
-//    res.setHeader('Content-Type', 'text/event-stream')
-//    res.setHeader('Access-Control-Allow-Origin', '*')
-
-//     const sendData = `data: ${JSON.stringify(tasabcv) +' Bs.'}\n\n`;
-//     res.write(sendData);
-
-// })
 
 const childPython2 = spawn('python',['bcvapi.py']);
 
@@ -115,15 +86,6 @@ function launchinfo2(){
 })
 }
 
-// const childPython3 = spawn('python',['apiparalelo.py']);
-
-// childPython3.stdout.on('data',(data)=>{
-//     tasaparalelo = `${data}`;
-//     paral = tasaparalelo.trim();
-//     launchinfo3();
-// })
-
-// function launchinfo3(){
 app.get ('/info2', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
@@ -179,110 +141,52 @@ childPython.on('close',(code)=>{
 })
 
 
-// app.get ('/info2', (req, res) =>{
-//       res.setHeader('Content-Type', 'text/event-stream')
-//       res.setHeader('Access-Control-Allow-Origin', '*')
-   
-
-//       const sendData2 = `data: ${JSON.stringify(tasamonitor) +' Bs.'}\n\n`;
-//       res.write(sendData2);
-
-// })
-
-
-  //   app.get ('/info3', (req, res) =>{
-  //     res.setHeader('Content-Type', 'text/event-stream')
-  //     res.setHeader('Access-Control-Allow-Origin', '*')
-       
-  //       const sendData3 = `data: ${JSON.stringify(fechas)}\n\n`
-  //       res.write(sendData3);
-       
-  // }) 
-
-    //   app.get ('/info4', (req, res) =>{
-    //     res.setHeader('Content-Type', 'text/event-stream')
-    //     res.setHeader('Access-Control-Allow-Origin', '*')
-         
-    //     const sendData4 = `data: ${tasaeuro}\n\n`;
-    //     res.write(sendData4);
-
-         
-    // })
-
-    //   app.get ('/info5', (req, res) =>{
-    //     res.setHeader('Content-Type', 'text/event-stream')
-    //     res.setHeader('Access-Control-Allow-Origin', '*')
-         
-
-    //       const sendData5 = `data: ${JSON.stringify(tasabinance) +' Bs.'}\n\n`;
-    //       res.write(sendData5);
-
-    // })
-
-    //   app.get ('/info6', (req, res) =>{
-    //     res.setHeader('Content-Type', 'text/event-stream')
-    //     res.setHeader('Access-Control-Allow-Origin', '*')
-         
-
-    //       const sendData6 = `data: ${JSON.stringify(tasapaypal) +' Bs.'}\n\n`;
-    //       res.write(sendData6);
-
-    // })
-
-      app.get ('/info7', (req, res) =>{
-        res.setHeader('Content-Type', 'text/event-stream')
-        res.setHeader('Access-Control-Allow-Origin', '*')
-         
-
-          const sendData7 = `data: ${JSON.stringify(cur_version)}\n\n`;
-          res.write(sendData7);
-
+app.get ('/info7', (req, res) =>{
+    res.setHeader('Content-Type', 'text/event-stream')
+    res.setHeader('Access-Control-Allow-Origin', '*')
+        
+    const sendData7 = `data: ${JSON.stringify(cur_version)}\n\n`;
+    res.write(sendData7);
 })
 
 app.get ('/info8', (req, res) =>{
-        res.setHeader('Content-Type', 'text/event-stream')
-        res.setHeader('Access-Control-Allow-Origin', '*')
-    
-        const sendData8 = `data: ${graf_bcv}\n\n`;
-        res.write(sendData8);
+    res.setHeader('Content-Type', 'text/event-stream')
+    res.setHeader('Access-Control-Allow-Origin', '*')
+
+    const sendData8 = `data: ${graf_bcv}\n\n`;
+    res.write(sendData8);
 })
 
 
 app.get ('/info9', (req, res) =>{
-        res.setHeader('Content-Type', 'text/event-stream')
-        res.setHeader('Access-Control-Allow-Origin', '*')
-    
-        const sendData9 = `data: ${graf_bcvEur}\n\n`;
-        res.write(sendData9);
+    res.setHeader('Content-Type', 'text/event-stream')
+    res.setHeader('Access-Control-Allow-Origin', '*')
+
+    const sendData9 = `data: ${graf_eur}\n\n`;
+    res.write(sendData9);
 })
      
-    // app.get ('/info6', (req, res) =>{
-    //    res.setHeader('Content-Type', 'text/event-stream')
-    //    res.setHeader('Access-Control-Allow-Origin', '*')
-    
-    //    const intervalId = setInterval(() =>{
-    //     const sendData6 = `data: ${JSON.stringify(tasamonitor * percent) +' Bs.'}\n\n`;
-    //     res.write(sendData6);
-    //    },700)
+// app.get ('/info6', (req, res) =>{
+//    res.setHeader('Content-Type', 'text/event-stream')
+//    res.setHeader('Access-Control-Allow-Origin', '*')
+
+//    const intervalId = setInterval(() =>{
+//     const sendData6 = `data: ${JSON.stringify(tasamonitor * percent) +' Bs.'}\n\n`;
+//     res.write(sendData6);
+//    },700)
 
 
-      //  app.get ('/info7', (req, res) =>{
-      //   res.setHeader('Content-Type', 'text/event-stream')
-      //   res.setHeader('Access-Control-Allow-Origin', '*')
-     
-      //   const intervalId = setInterval(() =>{
-      //    const sendData7 = `data: ${JSON.stringify(tasabinance) +' Bs.'}\n\n`;
-      //    res.write(sendData7);
-      //   },700)
+//  app.get ('/info7', (req, res) =>{
+//   res.setHeader('Content-Type', 'text/event-stream')
+//   res.setHeader('Access-Control-Allow-Origin', '*')
+
+//   const intervalId = setInterval(() =>{
+//    const sendData7 = `data: ${JSON.stringify(tasabinance) +' Bs.'}\n\n`;
+//    res.write(sendData7);
+//   },700)
 
 
         
-
-//       res.on('close', () =>{
-//         console.log('Client Closed Connection')
-//         clearInterval(intervalId)
-//       res.end()
-// })
 
 
 // Version 2
@@ -299,10 +203,4 @@ res.setHeader("Access-Control-Allow-Origin", "*")
 
 const sendDatab = `data: ${JSON.stringify(tasabcv)}\n\n`;
 res.write(sendDatab);
-
 })
-
-
-// app.listen(port,() => {
-//     console.log (`Server Running on port ${port}`)
-// })
