@@ -8,6 +8,7 @@ server.headersTimeout = 81000;
 app.use(cors())
 
 const { graf_bcv } = require('./output');
+const { graf_bcvEur } = require('output/outputBcv_eur.js');
 
 // Fecha de Actualizado
 // let fechas = "Mié. 4 de Dic, 3:30 PM";
@@ -244,6 +245,15 @@ app.get ('/info8', (req, res) =>{
     
         const sendData8 = `data: ${graf_bcv}\n\n`;
         res.write(sendData8);
+})
+
+
+app.get ('/info9', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+    
+        const sendData9 = `data: ${graf_bcvEur}\n\n`;
+        res.write(sendData9);
 })
      
     // app.get ('/info6', (req, res) =>{
