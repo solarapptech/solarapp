@@ -33,6 +33,9 @@ let xval = 4;
 let tasabinance = 0;
 let bncv = 0;
 
+let tasabinance2 = 0;
+let bncv2 = 0;
+
 
 const moment = require('moment-timezone'); 
 require('moment/locale/es'); 
@@ -67,6 +70,24 @@ app.get ('/info5', (req, res) =>{
     
         const sendData5 = `data: ${bncv +' Bs.'}\n\n`;
         res.write(sendData5);
+})
+}
+
+const childPython13 = spawn('python',['apibnc2.py']);
+
+childPython13.stdout.on('data',(data)=>{
+    tasabinance2 = `${data}`;
+    bncv2 = tasabinance2.trim();
+    launchinfo13();
+})
+
+function launchinfo13(){
+app.get ('/info13', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+    
+        const sendData13 = `data: ${bncv2 +' Bs.'}\n\n`;
+        res.write(sendData13);
 })
 }
 
