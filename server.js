@@ -16,7 +16,7 @@ let tasabcv = 0;
 let bcvt = 0;
 
 let tasaparalelo = 0;
-let paral = 74.27;
+let paral = 75.46;
 
 let tasapaypal = 0;
 let payp = 0;
