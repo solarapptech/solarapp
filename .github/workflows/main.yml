@@ -2,8 +2,8 @@ name: Scheduler Workflow
 
 on:
   schedule:
-    - cron: '*/60 11-23 * * *'
-    - cron: '*/60 0-4 * * *'
+    - cron: '*/180 11-23 * * *'
+    - cron: '*/180 0-4 * * *'
 
   workflow_dispatch:
 
