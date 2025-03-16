@@ -1,7 +1,7 @@
 import requests
 import json
 
-dolarp = 66.89
+dolarp = 80.12
 
 data1 = {
 "additionalKycVerifyFilter": 0,
