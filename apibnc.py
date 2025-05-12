@@ -17,7 +17,7 @@ data = {
 "rows": 10,
 "shieldMerchantAds": False,
 "tradeType": "BUY",
-"transAmount": 600
+"transAmount": 1130
 }
 
 #print (data)
