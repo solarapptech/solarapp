@@ -16,7 +16,7 @@ let tasabcv = 0;
 let bcvt = 0;
 
 let tasaparalelo = 0;
-let paral = null;
+let paral = 118.02;
 
 let tasapaypal = 0;
 let payp = 0;
@@ -238,14 +238,12 @@ let getParal = paral; // Variable para almacenar el valor de enparalelovzla.pric
 async function updateParal() {
     try {
         const response = await axios.get('https://pydolarve.org/api/v2/dollar?page=enparalelovzla');
-        const data = response.data.enparalelovzla;
-          console.log('test');
+        const data = response.data.monitors.enparalelovzla;
         if (data && typeof data.price !== 'undefined' && typeof data.price_old !== 'undefined') {
             getParal = data.price;
             // Lógica de actualización según tu condición
             if (data.price_old == paral) {
                 // No se actualiza, se mantiene el valor actual de paral
-                // paral sigue igual
             } else if (data.price_old != paral && data.price != paral) {
                 paral = getParal; // Se actualiza paral con el nuevo valor
             }
