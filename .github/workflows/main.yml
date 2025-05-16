@@ -65,7 +65,6 @@ jobs:
           git add output/outputParalelo.js
           git add output/outputFecha.js
           git diff --cached --quiet || git commit -m "Actualizar valor de paral automáticamente"
-          git commit -m "Automated commit"
 
       - name: Push changes
         run: |
