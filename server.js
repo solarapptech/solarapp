@@ -214,6 +214,28 @@ app.get ('/info12', (req, res) =>{
     res.write(sendData12);
 })
 
+// API paralelo Test
+let lastPrice = null;
+
+async function checkPrice() {
+    try {
+        const response = await fetch('https://pydolarve.org/api/v2/dollar?page=enparalelovzla');
+        const data = await response.json();
+        const newPrice = data.enparalelovzla.price;
+
+        if (lastPrice !== null && newPrice !== lastPrice) {
+            console.log('Cambio detectado:', newPrice);
+            // Aquí podrías enviar el mensaje a otro servicio o servidor
+        }
+
+        lastPrice = newPrice;
+    } catch (error) {
+        console.error('Error al consultar la API:', error);
+    }
+}
+
+setInterval(checkPrice, 180000); // Ejecuta la consulta cada 3 minutos
+
 // Version 2
 
 app.get ('/inforeq', (req, res) =>{
