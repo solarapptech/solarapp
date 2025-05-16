@@ -44,7 +44,7 @@ jobs:
       - name: Obtener nuevo valor de paral
         id: get_paral
         run: |
-          PARAL=$(curl -s 'https://pydolarve.org/api/v2/dollar?page=enparalelovzla' | jq '.enparalelovzla.price')
+          PARAL=$(curl -s 'https://pydolarve.org/api/v2/dollar?page=enparalelovzla' | jq '.monitors.enparalelovzla.price')
           echo "paral=$PARAL" >> $GITHUB_OUTPUT
 
       - name: Sobrescribir valor de paral en server.js
