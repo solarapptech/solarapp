@@ -230,30 +230,30 @@ const sendDatab = `data: ${JSON.stringify(tasabcv)}\n\n`;
 res.write(sendDatab);
 })
 
-const axios = require('axios'); // Agrega esta línea al inicio si no tienes axios instalado, ejecuta: npm install axios
+// const axios = require('axios'); // Agrega esta línea al inicio si no tienes axios instalado, ejecuta: npm install axios
 
-let getParal = paral; // Variable para almacenar el valor de enparalelovzla.price
+// let getParal = paral; // Variable para almacenar el valor de enparalelovzla.price
 
-// Función para actualizar el valor de paral cada 3 minutos
-async function updateParal() {
-    try {
-        const response = await axios.get('https://pydolarve.org/api/v2/dollar?page=enparalelovzla');
-        const data = response.data.monitors.enparalelovzla;
-        if (data && typeof data.price !== 'undefined' && typeof data.price_old !== 'undefined') {
-            getParal = data.price;
-            // Lógica de actualización según tu condición
-            if (data.price_old == paral) {
-                // No se actualiza, se mantiene el valor actual de paral
-            } else if (data.price_old != paral && data.price != paral) {
-                paral = getParal; // Se actualiza paral con el nuevo valor
-            }
-        }
-    } catch (error) {
-        console.error('Error al obtener datos de PyDolarVe:', error.message);
-    }
-}
+// // Función para actualizar el valor de paral cada 3 minutos
+// async function updateParal() {
+//     try {
+//         const response = await axios.get('https://pydolarve.org/api/v2/dollar?page=enparalelovzla');
+//         const data = response.data.monitors.enparalelovzla;
+//         if (data && typeof data.price !== 'undefined' && typeof data.price_old !== 'undefined') {
+//             getParal = data.price;
+//             // Lógica de actualización según tu condición
+//             if (data.price_old == paral) {
+//                 // No se actualiza, se mantiene el valor actual de paral
+//             } else if (data.price_old != paral && data.price != paral) {
+//                 paral = getParal; // Se actualiza paral con el nuevo valor
+//             }
+//         }
+//     } catch (error) {
+//         console.error('Error al obtener datos de PyDolarVe:', error.message);
+//     }
+// }
 
-// Ejecuta la función cada 3 minutos (180000 ms)
-setInterval(updateParal, 180000);
-// Ejecuta una vez al iniciar
-updateParal();
+// // Ejecuta la función cada 3 minutos (180000 ms)
+// setInterval(updateParal, 180000);
+// // Ejecuta una vez al iniciar
+// updateParal();
