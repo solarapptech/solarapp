@@ -239,6 +239,7 @@ async function updateParal() {
     try {
         const response = await axios.get('https://pydolarve.org/api/v2/dollar?page=enparalelovzla');
         const data = response.data.enparalelovzla;
+          console.log('test');
         if (data && typeof data.price !== 'undefined' && typeof data.price_old !== 'undefined') {
             getParal = data.price;
             // Lógica de actualización según tu condición
