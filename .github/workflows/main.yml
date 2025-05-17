@@ -26,17 +26,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4 pytz PyExecJS
 
-      - name: Obtener nuevo valor de paral
-        id: get_paral
-        run: |
-          PARAL=$(curl -s 'https://pydolarve.org/api/v2/dollar?page=enparalelovzla' | jq '.monitors.enparalelovzla.price')
-          echo "paral=$PARAL" >> $GITHUB_OUTPUT
-
-      - name: Sobrescribir valor de paral en server.js
-        run: |
-          PARAL=${{ steps.get_paral.outputs.paral }}
-          sed -i "s/let paral = [0-9.]\+;/let paral = $PARAL;/" server.js
-
       - name: Run script
         run: python output/estadisticas.py
 
@@ -58,7 +47,6 @@ jobs:
           git config --global user.email "solartech4756@gmail.com"
           git config --global user.name "solarapptech"
           git add pared.txt
-          git add server.js
           git add output/outputBcv.js
           git add output/outputBcv_eur.js
           git add output/outputPayp.js
