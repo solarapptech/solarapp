@@ -32,7 +32,7 @@ else:
     content_file = ""
 
 # Convertir el contenido en una lista
-paralelo_numbers = content_file.replace("const graf_paralelo = [", "").replace("];\nmodule.exports = { graf_paralelo };", "").split(", ") if content else []
+paralelo_numbers = content_file.replace("const graf_paralelo = [", "").replace("];\nmodule.exports = { graf_paralelo };", "").split(", ") if content_file else []
 
 # Contar el número de días desde una fecha de inicio en la zona horaria de Venezuela
 start_date = datetime(2025, 1, 20, tzinfo=venezuela_tz)
