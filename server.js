@@ -274,7 +274,7 @@ app.get('/info2', async (req, res) => {
                 const data = response.data.monitors.enparalelovzla;
                 valueToSend = (data && typeof data.price !== 'undefined') ? data.price : 0;
             } catch (error) {
-                valueToSend = (data && typeof data.price !== 'undefined') ? data.price : (graf_paralelo[graf_paralelo.length - 1] || 0);
+                valueToSend = graf_paralelo[graf_paralelo.length - 1] || 0; // <-- FIXED
             }
         }
     } else {
