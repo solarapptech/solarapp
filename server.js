@@ -289,6 +289,6 @@ app.get ('/info2', (req, res) =>{
     res.setHeader('Content-Type', 'text/event-stream')
     res.setHeader('Access-Control-Allow-Origin', '*')
 
-    const sendData12 = `data: ${0}\n\n`;
+    const sendData2 = `data: ${0}\n\n`;
     res.write(sendData2);
 })
