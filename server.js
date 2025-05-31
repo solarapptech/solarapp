@@ -222,65 +222,73 @@ const sendDatab = `data: ${JSON.stringify(tasabcv)}\n\n`;
 res.write(sendDatab);
 })
 
-let lastApiValue = null;
+// let lastApiValue = null;
 
-// Verifica si la hora de Caracas está en los rangos permitidos
-function isInAllowedTime() {
-    const now = moment().tz('America/Caracas');
-    const hour = now.hour();
-    const minute = now.minute();
+// // Verifica si la hora de Caracas está en los rangos permitidos
+// function isInAllowedTime() {
+//     const now = moment().tz('America/Caracas');
+//     const hour = now.hour();
+//     const minute = now.minute();
 
-    // Rango 1: 8:40am a 10:00am
-    if ((hour === 8 && minute >= 40) || (hour === 9) || (hour === 10 && minute === 0)) {
-        return true;
-    }
-    // Rango 2: 12:40pm a 2:00pm
-    if ((hour === 12 && minute >= 40) || (hour === 13) || (hour === 14 && minute === 0)) {
-        return true;
-    }
-    return false;
-}
+//     // Rango 1: 8:40am a 10:00am
+//     if ((hour === 8 && minute >= 40) || (hour === 9) || (hour === 10 && minute === 0)) {
+//         return true;
+//     }
+//     // Rango 2: 12:40pm a 2:00pm
+//     if ((hour === 12 && minute >= 40) || (hour === 13) || (hour === 14 && minute === 0)) {
+//         return true;
+//     }
+//     return false;
+// }
 
-// Solicitud GET cada 22 segundos solo en los rangos permitidos
-async function updateParalFromApi() {
-    if (isInAllowedTime()) {
-        try {
-            const response = await axios.get('https://pydolarve.org/api/v2/dollar?page=enparalelovzla');
-            const data = response.data.monitors.enparalelovzla;
-            if (data && typeof data.price !== 'undefined') {
-                lastApiValue = data.price;
-            }
-        } catch (error) {
-            console.error('Error al obtener datos de PyDolarVe:', error.message);
-        }
-    }
-}
-setInterval(updateParalFromApi, 22000);
+// // Solicitud GET cada 22 segundos solo en los rangos permitidos
+// async function updateParalFromApi() {
+//     if (isInAllowedTime()) {
+//         try {
+//             const response = await axios.get('https://pydolarve.org/api/v2/dollar?page=enparalelovzla');
+//             const data = response.data.monitors.enparalelovzla;
+//             if (data && typeof data.price !== 'undefined') {
+//                 lastApiValue = data.price;
+//             }
+//         } catch (error) {
+//             console.error('Error al obtener datos de PyDolarVe:', error.message);
+//         }
+//     }
+// }
+// setInterval(updateParalFromApi, 22000);
 
-// Modifica el endpoint /info2
-app.get('/info2', async (req, res) => {
-    res.setHeader('Content-Type', 'text/event-stream');
-    res.setHeader('Access-Control-Allow-Origin', '*');
+// // Modifica el endpoint /info2
+// app.get('/info2', async (req, res) => {
+//     res.setHeader('Content-Type', 'text/event-stream');
+//     res.setHeader('Access-Control-Allow-Origin', '*');
 
-    let valueToSend;
+//     let valueToSend;
 
-    if (paral === null || paral === '') {
-        // Si no hay valor en cache, haz la solicitud en el momento
-        if (lastApiValue !== null) {
-            valueToSend = lastApiValue;
-        } else {
-            try {
-                const response = await axios.get('https://pydolarve.org/api/v2/dollar?page=enparalelovzla');
-                const data = response.data.monitors.enparalelovzla;
-                valueToSend = (data && typeof data.price !== 'undefined') ? data.price : 0;
-            } catch (error) {
-                valueToSend = graf_paralelo[graf_paralelo.length - 1] || 0; // <-- FIXED
-            }
-        }
-    } else {
-        valueToSend = paral;
-    }
+//     if (paral === null || paral === '') {
+//         // Si no hay valor en cache, haz la solicitud en el momento
+//         if (lastApiValue !== null) {
+//             valueToSend = lastApiValue;
+//         } else {
+//             try {
+//                 const response = await axios.get('https://pydolarve.org/api/v2/dollar?page=enparalelovzla');
+//                 const data = response.data.monitors.enparalelovzla;
+//                 valueToSend = (data && typeof data.price !== 'undefined') ? data.price : 0;
+//             } catch (error) {
+//                 valueToSend = graf_paralelo[graf_paralelo.length - 1] || 0; // <-- FIXED
+//             }
+//         }
+//     } else {
+//         valueToSend = paral;
+//     }
 
-    const sendData2 = `data: ${valueToSend + ' Bs.'}\n\n`;
+//     const sendData2 = `data: ${valueToSend + ' Bs.'}\n\n`;
+//     res.write(sendData2);
+// });
+
+app.get ('/info2', (req, res) =>{
+    res.setHeader('Content-Type', 'text/event-stream')
+    res.setHeader('Access-Control-Allow-Origin', '*')
+
+    const sendData12 = `data: ${0}\n\n`;
     res.write(sendData2);
-});
+})
