@@ -124,7 +124,7 @@ function launchinfo4(){
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
     
-        const sendData6 = `data: ${payp +' Bs.'}\n\n`;
+        const sendData6 = `data: ${0 +' Bs.'}\n\n`;
         res.write(sendData6);
 })
 }
@@ -186,7 +186,7 @@ app.get ('/info10', (req, res) =>{
     res.setHeader('Content-Type', 'text/event-stream')
     res.setHeader('Access-Control-Allow-Origin', '*')
 
-    const sendData10 = `data: ${graf_payp}\n\n`;
+    const sendData10 = `data: ${0}\n\n`;
     res.write(sendData10);
 })
 
@@ -194,7 +194,7 @@ app.get ('/info11', (req, res) =>{
     res.setHeader('Content-Type', 'text/event-stream')
     res.setHeader('Access-Control-Allow-Origin', '*')
 
-    const sendData11 = `data: ${graf_paralelo}\n\n`;
+    const sendData11 = `data: ${0}\n\n`;
     res.write(sendData11);
 })
 
