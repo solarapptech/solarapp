@@ -2,6 +2,16 @@ import requests
 import json
 import sys
 
+try:
+    response = requests.get('https://solartech.onrender.com/info1', timeout=5)
+    # El endpoint devuelve: data: numero Bs.\n\n
+    text = response.text
+    # Extraer el número del string
+    dolarp = float(text.split('data:')[1].split('Bs.')[0].strip())
+except Exception as e:
+    # Valor por defecto si falla la petición
+    dolarp = 100
+
 data = {
 "additionalKycVerifyFilter": 0,
 "asset": "USDT",
@@ -17,7 +27,7 @@ data = {
 "rows": 10,
 "shieldMerchantAds": False,
 "tradeType": "BUY",
-"transAmount": 1130
+"transAmount": dolarp * 20
 }
 
 #print (data)
