@@ -186,7 +186,7 @@ app.get ('/info10', (req, res) =>{
     res.setHeader('Content-Type', 'text/event-stream')
     res.setHeader('Access-Control-Allow-Origin', '*')
 
-    const sendData10 = `data: ${0}\n\n`;
+    const sendData10 = `data: ${graf_payp}\n\n`;
     res.write(sendData10);
 })
 
