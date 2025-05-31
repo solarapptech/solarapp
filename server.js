@@ -124,7 +124,7 @@ function launchinfo4(){
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
     
-        const sendData6 = `data: ${0 +' Bs.'}\n\n`;
+        const sendData6 = `data: ${payp +' Bs.'}\n\n`;
         res.write(sendData6);
 })
 }
