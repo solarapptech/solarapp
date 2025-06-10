@@ -206,6 +206,45 @@ app.get ('/info12', (req, res) =>{
     res.write(sendData12);
 })
 
+// Tasa Zinli
+const childPython6 = spawn('python',['zinliapi.py']);
+
+childPython6.stdout.on('data',(data)=>{
+    tasazinli = `${data}`;
+    zinli = tasazinli.trim();
+    launchinfo6();
+})
+
+function launchinfo6(){
+    app.get ('/info13', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+    
+        const sendData13 = `data: ${zinli +' Bs.'}\n\n`;
+        res.write(sendData13);
+})
+}
+
+// Tasa Brasil
+const childPython7 = spawn('python',['brasilapi.py']);
+
+childPython7.stdout.on('data',(data)=>{
+    tasabrasil = `${data}`;
+    brasil = tasabrasil.trim();
+    launchinfo7();
+})
+
+function launchinfo7(){
+    app.get ('/info14', (req, res) =>{
+        res.setHeader('Content-Type', 'text/event-stream')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+    
+        const sendData14 = `data: ${brasil +' Bs.'}\n\n`;
+        res.write(sendData14);
+})
+}
+
+
 // Version 2
 
 app.get ('/inforeq', (req, res) =>{
