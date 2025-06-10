@@ -216,7 +216,7 @@ childPython6.stdout.on('data',(data)=>{
 })
 
 function launchinfo6(){
-    app.get ('/info13', (req, res) =>{
+    app.get ('/info14', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
     
@@ -235,7 +235,7 @@ childPython7.stdout.on('data',(data)=>{
 })
 
 function launchinfo7(){
-    app.get ('/info14', (req, res) =>{
+    app.get ('/info15', (req, res) =>{
         res.setHeader('Content-Type', 'text/event-stream')
         res.setHeader('Access-Control-Allow-Origin', '*')
     
