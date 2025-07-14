@@ -9,7 +9,7 @@ try:
     dolarp = float(text.split('data:')[1].split('Bs.')[0].strip())
 except Exception as e:
     # Valor por defecto si falla la petición
-    dolarp = 100
+    dolarp = 150
 
 data1 = {
 "additionalKycVerifyFilter": 0,
