@@ -9,7 +9,7 @@ try:
     dolarp = float(text.split('data:')[1].split('Bs.')[0].strip())
 except Exception as e:
     # Valor por defecto si falla la petición
-    dolarp = 150
+    dolarp = 180
 
 data1 = {
 "additionalKycVerifyFilter": 0,
@@ -495,3 +495,4 @@ promediov7 = sum(numeros) / len(numeros)
 
 array_1d = promedio1,promedio2,promedio3,promedio4,promedio5,promedio6,promedio7, promediov1,promediov2,promediov3,promediov4,promediov5,promediov6, promediov7
 print (array_1d)
+
